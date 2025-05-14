@@ -8,23 +8,24 @@ namespace BE
     public class BEUsuarioLog
     {
         public int IdLog { get; set; }
-        public BEUsuario Usuario { get; set; }
+        public int IdUsuario { get; set; }
         public DateTime FechaHora { get; set; }
         public string Accion { get; set; }
 
 
-        public BEUsuarioLog(int idLog, BEUsuario pUsuario, DateTime fechaHora, string accion)
+        public BEUsuarioLog(string idLog, string idUsuario, string fechaHora, string accion)
         {
-            IdLog = idLog;
-            Usuario = pUsuario;
-            FechaHora = fechaHora;
+            
+
+            IdLog = int.Parse(idLog);
+            IdUsuario = int.Parse(idUsuario);
+            FechaHora = DateTime.Parse(fechaHora);
             Accion = accion;
         }
 
-        public BEUsuarioLog(BEUsuario pUsuario, DateTime fechaHora, string accion)
+        public BEUsuarioLog(int idUsuario, string accion)
         {
-            Usuario = pUsuario;
-            FechaHora = fechaHora;
+            IdUsuario = idUsuario;
             Accion = accion;
         }
 

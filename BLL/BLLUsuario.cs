@@ -6,9 +6,9 @@ using System.Text;
 
 namespace BLL
 {
-    public class BLLUsuario : UserRegistrationChecher
+    public class BLLUsuario : IUserRegistrationChecher
     {
-        public override bool IsUserRegistered(string pEmail, string pPassword, out BEUsuario UserFound)
+        public bool IsUserRegistered(string pEmail, string pPassword, out BEUsuario UserFound)
         {
             throw new NotImplementedException();
         }

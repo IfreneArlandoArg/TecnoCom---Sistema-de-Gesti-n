@@ -6,8 +6,8 @@ using System.Text;
 
 namespace BLL
 {
-    public abstract class UserRegistrationChecher
+    public interface IUserRegistrationChecher
     {
-        public abstract bool IsUserRegistered(string pEmail, string pPassword, out BEUsuario UserFound);
+         bool IsUserRegistered(string pEmail, string pPassword, out BEUsuario UserFound);
     }
 }
