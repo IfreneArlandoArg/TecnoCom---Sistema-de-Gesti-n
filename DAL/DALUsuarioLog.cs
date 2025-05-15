@@ -19,14 +19,43 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand("ALTA_UsuarioLog", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add(new SqlParameter("@IDUSUARIO",pBEUsuarioLog.IdUsuario));
-            
+                cmd.Parameters.Add(new SqlParameter("@IDUSUARIO",pBEUsuarioLog.IdUsuario) );
+                cmd.Parameters.Add(new SqlParameter("@ACCION", pBEUsuarioLog.Accion) );
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+
             }
         }
 
         public List<BEUsuarioLog> Listar(BEUsuario pBEUsuario)
         {
-            throw new System.NotImplementedException();
+            List<BEUsuarioLog> tmp = new List<BEUsuarioLog>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("LISTAR_LOGS_USUARIO",conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@IDUSUARIO", pBEUsuario.IdUsuario));
+
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read()) 
+                { 
+                   BEUsuarioLog tmpUsuario = new BEUsuarioLog(reader["IDLOG"].ToString(), reader["IDUSARIO"].ToString(), reader["FECHAHORA"].ToString(), reader["ACCION"].ToString() );
+
+                    tmp.Add(tmpUsuario);
+                }
+
+            }
+
+
+            return tmp;
+
         }
     }
 }

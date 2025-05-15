@@ -12,7 +12,7 @@ namespace BE
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        public BEUsuario Rol { get; set; }
+        public BERol Rol { get; set; }
 
         public DateTime FechaNacimiento { get; set; }
 
@@ -22,7 +22,7 @@ namespace BE
         public string PasswordHash { get; set; }
 
 
-        public BEUsuario(string pIdUsuario, string pNombre, string pApellido, BEUsuario pRol, string pfechaNacimiento, string pActivo, string pEmail, string pPasswordHash ) 
+        public BEUsuario(string pIdUsuario, string pNombre, string pApellido, BERol pRol, string pfechaNacimiento, string pActivo, string pEmail, string pPasswordHash ) 
         {
             DateTime tmpDate;
 
@@ -45,7 +45,7 @@ namespace BE
         }
 
 
-        public BEUsuario(string pNombre, string pApellido, BEUsuario pRol, DateTime pfechaNacimiento, string pEmail, string pPasswordHash)
+        public BEUsuario(string pNombre, string pApellido, BERol pRol, DateTime pfechaNacimiento, string pEmail, string pPasswordHash)
         {
            
             Nombre = pNombre;

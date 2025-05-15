@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLRol.cs" />
     <Compile Include="BLLUsuario.cs" />
+    <Compile Include="BLLUsuarioLog.cs" />
     <Compile Include="LoginSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserRegistrationChecher.cs" />
+    <Compile Include="IUserRegistrationChecher.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

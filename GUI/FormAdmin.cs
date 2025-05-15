@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BE;
+
 
 namespace GUI
 {
@@ -16,26 +19,32 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        
+        BLLRol bllRol = new BLLRol();
+        BLLUsuarioLog log = new BLLUsuarioLog();
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            //    DialogResult result = MessageBox.Show("¿Deseas cerrar la sesión?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        //// Podés mostrar el Login o simplemente cerrar el sistema
-            //        this.Close();
-            //        //// O abrir el formulario Login:
-            //        //// new LoginForm().Show();
-            //    }
-
-
-            DialogResult result = ConfirmationMessageBox.Mostrar("¿Deseas cerrar la sesión?", "Confirmar");
-
-            if (result == DialogResult.Yes)
+            try
             {
-                // this.Close(); o redirigir a Login
-                this.Close();
+                DialogResult result = ConfirmationMessageBox.Mostrar("¿Deseas cerrar la sesión?", "Confirmar");
 
+                if (result == DialogResult.Yes)
+                {
+
+                    BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Logout");
+
+                    LoginSession.Instancia.Logout();
+
+                   
+
+                    this.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -54,6 +63,21 @@ namespace GUI
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+            try
+            {
+               
+
+                toolStripStatusLabel.Text += $" {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

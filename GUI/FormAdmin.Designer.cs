@@ -131,7 +131,7 @@
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(103, 20);
-            this.toolStripStatusLabel.Text = "Sesión: Admin";
+            this.toolStripStatusLabel.Text = "Sesión Admin :";
             // 
             // btnCerrarSesion
             // 
@@ -155,6 +155,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormAdmin";
             this.Text = "TecnoCom - Sistema de Gestión";
+            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.Resize += new System.EventHandler(this.FormAdmin_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
