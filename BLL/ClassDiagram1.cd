@@ -29,5 +29,12 @@
       <FileName>BLLUsuarioLog.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BLL.Encriptador">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Encriptador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

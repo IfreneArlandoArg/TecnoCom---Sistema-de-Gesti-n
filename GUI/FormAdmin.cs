@@ -32,6 +32,7 @@ namespace GUI
                 {
 
                     BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Logout");
+                    log.Alta(beUsuarioLog);
 
                     LoginSession.Instancia.Logout();
 

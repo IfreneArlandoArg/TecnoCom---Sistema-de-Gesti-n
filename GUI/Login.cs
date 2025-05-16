@@ -46,8 +46,13 @@ namespace GUI
                     throw new Exception("El campo password tiene qué tener un valor...");
 
                 BEUsuario tmpUsuario;
-                
-                bool registrado = bllUsuario.IsUserRegistered(txtEmail.Text, txtPassword.Text, out tmpUsuario);
+
+
+                string passwordHasheada = Encriptador.HashearConSHA256(txtPassword.Text);
+
+                txtPassword.Text = passwordHasheada;
+
+                bool registrado = bllUsuario.IsUserRegistered(txtEmail.Text, passwordHasheada, out tmpUsuario);
 
                 if (!registrado)
                     throw new Exception("Email y/o Password incorrecto...");
@@ -83,10 +88,7 @@ namespace GUI
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void Login_Load(object sender, EventArgs e)
         {
