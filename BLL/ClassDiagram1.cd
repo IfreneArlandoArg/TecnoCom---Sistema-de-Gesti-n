@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="BLL.BLLUsuario">
-    <Position X="6" Y="2.75" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAACAAIAAAAAAAAQAAAAAAAAQAAAAQ=</HashCode>
       <FileName>BLLUsuario.cs</FileName>
@@ -16,21 +16,21 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BLL.BLLRol">
-    <Position X="10.75" Y="2.75" Width="1.5" />
+    <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>BLLRol.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BLL.BLLUsuarioLog">
-    <Position X="8.25" Y="2.75" Width="1.5" />
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>BLLUsuarioLog.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BLL.Encriptador">
-    <Position X="3.75" Y="5.25" Width="1.5" />
+    <Position X="12" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Encriptador.cs</FileName>

@@ -20,7 +20,7 @@ namespace GUI
             InitializeComponent();
         }
         
-        BLLRol bllRol = new BLLRol();
+     //   BLLRol bllRol = new BLLRol();
         BLLUsuarioLog log = new BLLUsuarioLog();
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -73,6 +73,30 @@ namespace GUI
                
 
                 toolStripStatusLabel.Text += $" {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gestionDePerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Cerrar cualquier formulario hijo que esté abierto
+                foreach (Form childForm in this.MdiChildren)
+                {
+                    childForm.Close();
+                }
+
+                // Crear una nueva instancia del formulario de gestión de perfiles
+                GestionPerfiles gestionPerfiles = new GestionPerfiles();
+                gestionPerfiles.MdiParent = this; // Establecer FormAdmin como contenedor MDI
+                gestionPerfiles.WindowState = FormWindowState.Maximized; // Opcional: maximizar al abrir
+                gestionPerfiles.Show();
+
             }
             catch (Exception ex)
             {

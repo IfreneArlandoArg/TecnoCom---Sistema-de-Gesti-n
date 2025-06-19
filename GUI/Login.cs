@@ -45,12 +45,14 @@ namespace GUI
                 if (txtPassword.Text == string.Empty)
                     throw new Exception("El campo password tiene qué tener un valor...");
 
+                
+
                 BEUsuario tmpUsuario;
 
 
                 string passwordHasheada = Encriptador.HashearConSHA256(txtPassword.Text);
 
-                txtPassword.Text = passwordHasheada;
+                //txtPassword.Text = passwordHasheada;
 
                 bool registrado = bllUsuario.IsUserRegistered(txtEmail.Text, passwordHasheada, out tmpUsuario);
 
