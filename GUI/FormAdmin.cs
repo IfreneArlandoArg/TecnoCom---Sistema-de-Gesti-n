@@ -70,7 +70,9 @@ namespace GUI
         {
             try
             {
-               
+                //Aquí manejamos Autorización...👇🏽👇🏽👇🏽👇🏽
+
+
 
                 toolStripStatusLabel.Text += $" {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
             }

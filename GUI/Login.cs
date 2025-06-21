@@ -64,7 +64,9 @@ namespace GUI
 
                 Form frm = new Form();
 
-                if(tmpUsuario.Rol.NombreRol == "Admin") 
+                
+
+                if (tmpUsuario.Rol.NombreRol == "Admin") 
                 {
                     frm = new FormAdmin();
 

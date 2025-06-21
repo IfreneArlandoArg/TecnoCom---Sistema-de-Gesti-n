@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BEPermiso.cs" />
     <Compile Include="BERol.cs" />
     <Compile Include="BEUsuario.cs" />
     <Compile Include="BEUsuarioLog.cs" />

@@ -36,5 +36,19 @@
       <FileName>Encriptador.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BLL.Permiso">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAgAABAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Permiso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Rol">
+    <Position X="10.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAABAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
