@@ -141,7 +141,7 @@
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(107, 20);
-            this.toolStripStatusLabel.Text = "Sesión Admin :";
+            this.toolStripStatusLabel.Text = "Sesión";
             // 
             // btnCerrarSesion
             // 

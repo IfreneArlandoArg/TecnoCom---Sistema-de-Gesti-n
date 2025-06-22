@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace BE
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        public BERol Rol { get; set; }
+        public Rol Rol { get; set; }
 
         public DateTime FechaNacimiento { get; set; }
 
@@ -22,14 +23,14 @@ namespace BE
         public string PasswordHash { get; set; }
 
 
-        public BEUsuario(string pIdUsuario, string pNombre, string pApellido, BERol pRol, string pfechaNacimiento, string pActivo, string pEmail, string pPasswordHash ) 
+        public BEUsuario(string pIdUsuario, string pNombre, string pApellido, Rol pRol, string pfechaNacimiento, string pActivo, string pEmail, string pPasswordHash ) 
         {
             DateTime tmpDate;
 
             if(!DateTime.TryParse(pfechaNacimiento, out tmpDate)) 
             {
                 throw new Exception($"Error (\"Formato\") con la fecha de nacimiento {pfechaNacimiento} del usuario : {pApellido}, {pNombre}" +
-                    $"\nEmail : {pEmail}\nRol : {pRol.NombreRol}");
+                    $"\nEmail : {pEmail}");
             }
 
 
@@ -45,12 +46,12 @@ namespace BE
         }
 
 
-        public BEUsuario(string pNombre, string pApellido, BERol pRol, DateTime pfechaNacimiento, string pEmail, string pPasswordHash)
+        public BEUsuario(string pNombre, string pApellido, Rol pRol, DateTime pfechaNacimiento, string pEmail, string pPasswordHash)
         {
            
             Nombre = pNombre;
             Apellido = pApellido;
-            Rol = pRol;
+            
             FechaNacimiento = pfechaNacimiento;
             Email = pEmail;
             PasswordHash = pPasswordHash;

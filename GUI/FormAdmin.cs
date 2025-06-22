@@ -19,9 +19,10 @@ namespace GUI
         {
             InitializeComponent();
         }
-        
-     //   BLLRol bllRol = new BLLRol();
+
+        BLLPermiso bLLPermiso = new BLLPermiso(); 
         BLLUsuarioLog log = new BLLUsuarioLog();
+        List<Permiso> permisosDisponibles = new List<Permiso>();
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             try
@@ -71,10 +72,27 @@ namespace GUI
             try
             {
                 //Aquí manejamos Autorización...👇🏽👇🏽👇🏽👇🏽
+                permisosDisponibles = bLLPermiso.Listar();
+
+                if(permisosDisponibles.Count != LoginSession.Instancia.UsuarioActual.Rol.ListaPermisos.Count) 
+                {
+                    List<Permiso> permisosFaltantes = permisosDisponibles.Where(p1 => !LoginSession.Instancia.UsuarioActual.Rol.ListaPermisos.Any(p2 => p2.Validar(p1))).ToList();
 
 
+                    foreach(Permiso pI in permisosFaltantes) 
+                    {
+                        var item = menuStrip1.Items.OfType<ToolStripItem>().FirstOrDefault(i => i.Text == pI.Nombre);
 
-                toolStripStatusLabel.Text += $" {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
+                        if (item != null)
+                        {
+                            menuStrip1.Items.Remove(item);
+                        }
+                    }
+
+                }
+
+
+                toolStripStatusLabel.Text += $" {LoginSession.Instancia.UsuarioActual.Rol.Nombre} : {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
             }
             catch (Exception ex)
             {

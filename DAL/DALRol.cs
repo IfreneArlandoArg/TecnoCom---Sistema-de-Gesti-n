@@ -11,34 +11,25 @@ namespace DAL
     public class DALRol 
     {
         string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
-        public List<BERol> Listar() 
+
+        public void Alta()
         {
-            List<BERol> tmp = new List<BERol>();
+            throw new System.NotImplementedException();
+        }
 
+        public void Baja()
+        {
+            throw new System.NotImplementedException();
+        }
 
-            using (SqlConnection conn = new SqlConnection(connectionString)) 
-            {
-                SqlCommand cmd = new SqlCommand("LISTAR_ROLES",conn);
+        public void Modificar()
+        {
+            throw new System.NotImplementedException();
+        }
 
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                conn.Open();
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read()) 
-                {
-                    BERol rolTmp = new BERol( reader["IDROL"].ToString(), reader["NOMBRE"].ToString() );
-                    
-                    tmp.Add(rolTmp);
-
-                }
-            
-            }
-
-
-
-            return tmp;
+        public void Listar()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

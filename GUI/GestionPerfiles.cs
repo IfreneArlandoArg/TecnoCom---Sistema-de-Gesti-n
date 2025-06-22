@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,31 @@ namespace GUI
             InitializeComponent();
         }
 
+        BLLPermiso permisosDisponibles = new BLLPermiso();
+
+        void mostrar(DataGridView dtgv, Object pO) 
+        { 
+            dtgv.DataSource = null;
+            dtgv.DataSource = pO;
+        
+        }
+
+        void mostrarPermisos() 
+        {
+            mostrar(dataGridView1, permisosDisponibles.Listar());
+        }
         private void GestionPerfiles_Load(object sender, EventArgs e)
         {
+            try
+            {
+                mostrarPermisos();
+                
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message, "Error");
+            }
 
         }
 

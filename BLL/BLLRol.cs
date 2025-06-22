@@ -10,9 +10,11 @@ namespace BLL
     public class BLLRol
     {
         DALRol dalRol = new DALRol();
-        public List<BERol> Listar()
+       
+
+        public void ListarPermisosRol()
         {
-            return dalRol.Listar();
+            throw new System.NotImplementedException();
         }
     }
 }

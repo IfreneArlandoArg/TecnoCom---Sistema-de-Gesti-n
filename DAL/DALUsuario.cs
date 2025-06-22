@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 
 
 
+
 namespace DAL
 {
     public class DALUsuario 
@@ -26,7 +27,7 @@ namespace DAL
                 
                 cmd.Parameters.Add(new SqlParameter("@pNOMBRE", pBeUsuario.Nombre));
                 cmd.Parameters.Add(new SqlParameter("@pAPELLIDO", pBeUsuario.Apellido));
-                cmd.Parameters.Add(new SqlParameter("@pIDROL", pBeUsuario.Rol.IdRol));
+                cmd.Parameters.Add(new SqlParameter("@pIDROL", pBeUsuario.Rol.Id));
                 cmd.Parameters.Add(new SqlParameter("@pFECHA_NACIMIENTO", pBeUsuario.FechaNacimiento));
                 
                 cmd.Parameters.Add(new SqlParameter("@pEMAIL", pBeUsuario.Email));
@@ -57,7 +58,16 @@ namespace DAL
 
                 while (reader.Read()) 
                 {
-                    BERol rolTmp = new BERol(reader["IDROL"].ToString(), reader["NOMBRE_ROL"].ToString());
+                    DALPermiso dALPermiso = new DALPermiso();
+
+                    //En vez de esto vamos a manejar una lista permisos???
+                    Rol rolTmp = new Rol(reader["IDROL"].ToString(), reader["NOMBRE_ROL"].ToString(), reader["DESCRIPCION"].ToString());
+
+                    foreach (Permiso p in dALPermiso.ObtenerPermisosRol(rolTmp) ) 
+                    { 
+                       rolTmp.ListaPermisos.Add(p);
+                    }
+
 
                     BEUsuario usrTmp = new BEUsuario(reader["IDUSUARIO"].ToString(), reader["NOMBRE"].ToString(), 
                         reader["APELLIDO"].ToString(), rolTmp, reader["FECHA_NACIMIENTO"].ToString(), reader["ACTIVO"].ToString(), 
@@ -85,7 +95,7 @@ namespace DAL
                 cmd.Parameters.Add(new SqlParameter("@pIDUSUARIO", pBeUsuario.IdUsuario));
                 cmd.Parameters.Add(new SqlParameter("@pNOMBRE", pBeUsuario.Nombre));
                 cmd.Parameters.Add(new SqlParameter("@pAPELLIDO", pBeUsuario.Apellido));
-                cmd.Parameters.Add(new SqlParameter("@pIDROL", pBeUsuario.Rol.IdRol));
+                cmd.Parameters.Add(new SqlParameter("@pIDROL", pBeUsuario.Rol.Id));
                 
                 cmd.Parameters.Add(new SqlParameter("@pEMAIL", pBeUsuario.Email));
                 cmd.Parameters.Add(new SqlParameter("@pPASSWORD_HASH", pBeUsuario.PasswordHash));

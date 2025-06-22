@@ -8,9 +8,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DAL.DALRol">
-    <Position X="2.75" Y="3.25" Width="1.5" />
+    <Position X="12" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAAAAgACAAAAAAAAAAAQAAAAAAAAAAAAAQ=</HashCode>
       <FileName>DALRol.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -19,6 +19,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>DALUsuarioLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DALPermiso">
+    <Position X="10" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAgACAAAAABAAAAAQAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DALPermiso.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

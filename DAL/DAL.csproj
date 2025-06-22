@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALPermiso.cs" />
     <Compile Include="DALRol.cs" />
     <Compile Include="DALUsuario.cs" />
     <Compile Include="DALUsuarioLog.cs" />

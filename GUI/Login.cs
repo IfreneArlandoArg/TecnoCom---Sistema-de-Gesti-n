@@ -62,15 +62,15 @@ namespace GUI
                 LoginSession.Instancia.Login(tmpUsuario);
 
 
-                Form frm = new Form();
+                Form frm = new FormAdmin();
 
-                
 
-                if (tmpUsuario.Rol.NombreRol == "Admin") 
-                {
-                    frm = new FormAdmin();
 
-                }
+                //if (tmpUsuario.Rol.Nombre == "Admin") 
+                //{
+                //    frm = new FormAdmin();
+
+                //}
 
                 BEUsuarioLog beUsuarioLog = new BEUsuarioLog(tmpUsuario.IdUsuario, "Login");
 
