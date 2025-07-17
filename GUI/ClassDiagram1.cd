@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GUI.ConfirmationMessageBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAAAKQAAAQAAACAAQACAIAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ConfirmationMessageBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.FormAdmin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4MAAAAOgSAAAAQEAAigiICDByMQAQgDggACAKAJAgU=</HashCode>
+      <FileName>FormAdmin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.GestionClientes" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAGCQAIwEAACAIAICACQggJABAAAQKAAACAA=</HashCode>
+      <FileName>GestionClientes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.GestionIdiomas" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAIoCAACgQIBADAIAECAQAIAYEAEgAAAAAAACA=</HashCode>
+      <FileName>GestionIdiomas.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.GestionPerfiles" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAEAASAAQIQAAADAACIGAhAAABABAgCIIAAACAA=</HashCode>
+      <FileName>GestionPerfiles.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.gestionProductos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAAAAAACBAAI4MABCCAAACECAEABCBQAAAIAAAACA=</HashCode>
+      <FileName>gestionProductos.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.GestionUsuarios" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Ag6AABFAAWKQAIQGCADAJAIGAiAAAJABAgCIIhACCAA=</HashCode>
+      <FileName>GestionUsuarios.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.Login" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgoAABAAACAAAAwAAQCAKAACAIAACIAAAgAAAABAQAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.PaymentForm" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACwAAAEAEACAIRACAAAAAACAAAAABgCAACA=</HashCode>
+      <FileName>PaymentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Program" Collapsed="true">
+    <Position X="13.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.ReportesVentas" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAAQQAASAgABQEBACAAAACAAgAAAAAAAGEAAQABIA=</HashCode>
+      <FileName>ReportesVentas.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.ventaProductos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhOBRAQAAGCSFBQEAICAIQAiCDTIIJACMBBIKCAIAKA=</HashCode>
+      <FileName>ventaProductos.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GUI.Properties.Resources" Collapsed="true">
+    <Position X="13.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAIAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Properties.Settings" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

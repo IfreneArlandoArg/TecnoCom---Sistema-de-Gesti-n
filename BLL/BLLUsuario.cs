@@ -49,5 +49,17 @@ namespace BLL
         {
             return dalUsuario.Listar();
         }
+
+        public void BajaPermisoUsuario(int pIdUsuario, int pIdPermiso) 
+        { 
+           dalUsuario.BajaPermisoUsuario(pIdUsuario, pIdPermiso);
+        }
+
+        public void AltaPermisoUsuario(int pIdUsuario, int pIdPermiso) 
+        { 
+            dalUsuario.AltaPermisoUsuario(pIdUsuario, pIdPermiso);
+        
+        }
+
     }
 }

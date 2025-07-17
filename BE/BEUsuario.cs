@@ -13,7 +13,14 @@ namespace BE
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        public Rol Rol { get; set; }
+        private List<Componente> permisos = new List<Componente>();
+
+        public List<Componente> Permisos
+        {
+            get { return permisos; }
+            
+        }
+
 
         public DateTime FechaNacimiento { get; set; }
 
@@ -23,7 +30,7 @@ namespace BE
         public string PasswordHash { get; set; }
 
 
-        public BEUsuario(string pIdUsuario, string pNombre, string pApellido, Rol pRol, string pfechaNacimiento, string pActivo, string pEmail, string pPasswordHash ) 
+        public BEUsuario(string pIdUsuario, string pNombre, string pApellido, string pfechaNacimiento, string pActivo, string pEmail, string pPasswordHash ) 
         {
             DateTime tmpDate;
 
@@ -37,7 +44,7 @@ namespace BE
             IdUsuario = int.Parse(pIdUsuario);
             Nombre = pNombre;
             Apellido = pApellido;
-            Rol = pRol;
+           
             FechaNacimiento = tmpDate;
             Activo = bool.Parse(pActivo);   
             Email = pEmail; 
@@ -46,19 +53,30 @@ namespace BE
         }
 
 
-        public BEUsuario(string pNombre, string pApellido, Rol pRol, DateTime pfechaNacimiento, string pEmail, string pPasswordHash)
+        public BEUsuario(string pNombre, string pApellido, DateTime pfechaNacimiento, string pEmail, string pPasswordHash)
         {
            
             Nombre = pNombre;
             Apellido = pApellido;
-            
+           
             FechaNacimiento = pfechaNacimiento;
             Email = pEmail;
             PasswordHash = pPasswordHash;
 
         }
 
+        public void AgregarPermiso(Componente pPermiso)
+        {
+            
 
+            if (!permisos.Any(p => p.Validar(pPermiso)))
+            {
+                permisos.Add(pPermiso);
+            }
+           
+        }
+
+        
 
 
     }

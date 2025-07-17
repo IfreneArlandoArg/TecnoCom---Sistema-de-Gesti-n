@@ -29,54 +29,54 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.chBVerPass = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblEmail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(616, 457);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email :";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(616, 454);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(47, 16);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email :";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(740, 451);
+            this.txtEmail.Location = new System.Drawing.Point(747, 451);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(260, 22);
             this.txtEmail.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(740, 547);
+            this.txtPassword.Location = new System.Drawing.Point(747, 547);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(260, 22);
             this.txtPassword.TabIndex = 3;
             // 
-            // label2
+            // lblPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(616, 553);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password :";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(616, 550);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(73, 16);
+            this.lblPassword.TabIndex = 2;
+            this.lblPassword.Text = "Password :";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(910, 651);
+            this.btnLogin.Location = new System.Drawing.Point(859, 651);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(90, 35);
+            this.btnLogin.Size = new System.Drawing.Size(141, 35);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // chBVerPass
             // 
             this.chBVerPass.AutoSize = true;
-            this.chBVerPass.Location = new System.Drawing.Point(742, 607);
+            this.chBVerPass.Location = new System.Drawing.Point(749, 607);
             this.chBVerPass.Name = "chBVerPass";
             this.chBVerPass.Size = new System.Drawing.Size(119, 20);
             this.chBVerPass.TabIndex = 5;
@@ -111,9 +111,9 @@
             this.Controls.Add(this.chBVerPass);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -130,10 +130,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.CheckBox chBVerPass;
         private System.Windows.Forms.PictureBox pictureBox1;

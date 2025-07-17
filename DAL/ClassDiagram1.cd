@@ -1,31 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DAL.DALUsuario">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="7" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAEAAAAgACAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEQEAAAAEAAAAgACAAAAAABgAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>DALUsuario.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DAL.DALRol">
-    <Position X="12" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAgACAAAAAAAAAAAQAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>DALRol.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="DAL.DALUsuarioLog">
-    <Position X="5" Y="3.25" Width="1.5" />
+    <Position X="11" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>DALUsuarioLog.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DAL.DALPermiso">
-    <Position X="10" Y="3" Width="1.5" />
+  <Class Name="DAL.DALCliente">
+    <Position X="9" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAgACAAAAABAAAAAQAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>DALPermiso.cs</FileName>
+      <HashCode>AAAAAAAAAEAAAAgACAAAAAAAAAAAQAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DALCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DALProducto">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAgAAAAAAAAAAAAAQAAAAAAQAAAAAAA=</HashCode>
+      <FileName>DALProducto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DALFactura">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAEAKAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DALFactura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DALComponente">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAEAAEAgACEAAAABAAAAABAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DALComponente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DALIdioma">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DALIdioma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DALTraduccion">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAgAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>DALTraduccion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

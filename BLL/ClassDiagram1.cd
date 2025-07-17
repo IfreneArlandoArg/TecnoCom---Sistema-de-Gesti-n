@@ -1,53 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="BLL.BLLRol" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="BLL.BLLUsuario" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BLLRol.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="BLL.BLLUsuario" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAAACAAIAAAAAAAAQAAAAAAAAQAAAAQ=</HashCode>
+      <HashCode>AAEAAAAAAEAAAAAACAAIAAABAAAAQAAAAAAAAQAAAAQ=</HashCode>
       <FileName>BLLUsuario.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="BLL.BLLUsuarioLog" Collapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="BLL.BLLUsuarioLog">
+    <Position X="7.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>BLLUsuarioLog.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BLL.Encriptador" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Class Name="BLL.Encriptador">
+    <Position X="9.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Encriptador.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BLL.LoginSession" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+  <Class Name="BLL.LoginSession">
+    <Position X="5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAQAAAAABAAAAAAAAAIAAAAAAAAAAAAQAAAEAAA=</HashCode>
       <FileName>LoginSession.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BLL.BLLPermiso">
-    <Position X="7" Y="1.75" Width="1.5" />
+  <Class Name="BLL.BLLCliente">
+    <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BLLPermiso.cs</FileName>
+      <HashCode>AAAAAAAAAEAQAAAACAAAAAAAAAADQAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>BLLCliente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BLL.BLLProducto">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAACAAAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLLProducto.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="BLL.IUserRegistrationChecher" Collapsed="true">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+  <Class Name="BLL.BLLFactura">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAABAAAAAAAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLLFactura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.BLLComponente">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIAAEAAAAAACEAAAAAAAAAARAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>BLLComponente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.BLLIdioma">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLLIdioma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.BLLTraduccion">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>BLLTraduccion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Traductor">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAADAAACAABKAAAAAAAAAEEAAACAAAAAACAAA=</HashCode>
+      <FileName>Traductor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BLL.IUserRegistrationChecher">
+    <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>IUserRegistrationChecher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BLL.IIdiomaObserver">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIdiomaObserver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BLL.IClientRegistrationChecker">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IClientRegistrationChecker.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

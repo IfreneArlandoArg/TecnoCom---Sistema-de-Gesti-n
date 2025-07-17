@@ -1,32 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BE.BEUsuario">
-    <Position X="10" Y="1" Width="1.5" />
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EACAAAQAACAAAAAEAAAAgAAAAAAAAgAgAAAAAAAAAAA=</HashCode>
+      <HashCode>EACAAAQAACAAAAAEAAAAgAAAAAAAAAAgAAAAAgAAAAo=</HashCode>
       <FileName>BEUsuario.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BE.BEUsuarioLog" Collapsed="true">
-    <Position X="12.75" Y="1" Width="1.5" />
+  <Class Name="BE.BEUsuarioLog">
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAIAAAQ=</HashCode>
       <FileName>BEUsuarioLog.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BE.Permiso">
-    <Position X="5.75" Y="1" Width="1.5" />
+  <Class Name="BE.BEProducto">
+    <Position X="0.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAgAABAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>Permiso.cs</FileName>
+      <HashCode>AAAAAAAAAAAAgAAEAAAAgAARgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BEProducto.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BE.Rol">
-    <Position X="3.25" Y="4.25" Width="1.5" />
+  <Class Name="BE.BEFactura">
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAABAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>Rol.cs</FileName>
+      <HashCode>AAAAAAAAAAAAgAEAAACAgAAAAAAAQAAAAIAAAACAAAk=</HashCode>
+      <FileName>BEFactura.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BE.BECliente">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAEAAAAgAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BECliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Componente">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAIAAAAAAAAgAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Componente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Idioma">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Idioma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Traduccion">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Traduccion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.FacturaItem">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEQAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FacturaItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Patente">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAIAAAEAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Componente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Familia">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAIAAAEAAAAAAAAAAAAAQAAAAAAAEAAAAA=</HashCode>
+      <FileName>Componente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BE.EnumEstado">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>EnumEstado.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

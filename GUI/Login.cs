@@ -12,16 +12,48 @@ using BLL;
 
 namespace GUI
 {
-    public partial class Login : Form
+    public partial class Login : Form, IIdiomaObserver
     {
         public Login()
         {
             InitializeComponent();
+            Traductor.Instancia.Suscribir(this);
         }
 
         BLLUsuario bllUsuario = new BLLUsuario();
         BLLUsuarioLog log = new BLLUsuarioLog();
+        BLLIdioma bllIdioma = new BLLIdioma();
 
+
+        public void ActualizarIdioma(Idioma idioma)
+        {
+            this.Text = Traductor.Instancia.Traducir(this.Name);
+            TraducirControles(this.Controls);
+        }
+
+        private void TraducirControles(Control.ControlCollection controles)
+        {
+            foreach (Control control in controles)
+            {
+
+                if (!string.IsNullOrEmpty(control.Name) && !(control is TextBox))
+                {
+                    string textoTraducido = Traductor.Instancia.Traducir(control.Name);
+                    if (!string.IsNullOrEmpty(textoTraducido))
+                        control.Text = textoTraducido;
+                }
+
+
+                if (control.HasChildren)
+                    TraducirControles(control.Controls);
+
+                if (control is TextBox)
+                {
+                    control.Text = String.Empty;
+                }
+
+            }
+        }
         private void chBVerPass_CheckedChanged(object sender, EventArgs e)
         {
             if (chBVerPass.Checked)
@@ -66,11 +98,7 @@ namespace GUI
 
 
 
-                //if (tmpUsuario.Rol.Nombre == "Admin") 
-                //{
-                //    frm = new FormAdmin();
-
-                //}
+               
 
                 BEUsuarioLog beUsuarioLog = new BEUsuarioLog(tmpUsuario.IdUsuario, "Login");
 
@@ -100,6 +128,9 @@ namespace GUI
             {
 
 
+
+
+
             }
             catch (Exception ex)
             {
@@ -107,5 +138,13 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
+
+        private void GestionClientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Traductor.Instancia.Desuscribir(this);
+
+        }
+
     }
 }

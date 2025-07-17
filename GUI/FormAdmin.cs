@@ -9,25 +9,111 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
+using System.Security.Cryptography;
 
 
 namespace GUI
 {
-    public partial class FormAdmin : Form
+    public partial class FormAdmin : Form, IIdiomaObserver
     {
         public FormAdmin()
         {
             InitializeComponent();
+            Traductor.Instancia.Suscribir(this);
         }
 
-        BLLPermiso bLLPermiso = new BLLPermiso(); 
+        BLLComponente bLLComponente = new BLLComponente();
         BLLUsuarioLog log = new BLLUsuarioLog();
-        List<Permiso> permisosDisponibles = new List<Permiso>();
+        BLLIdioma bllIdioma = new BLLIdioma();
+
+
+
+        public void ActualizarIdioma(Idioma idioma)
+        {
+            this.Text = Traductor.Instancia.Traducir(this.Name);
+            TraducirControles(this.Controls);
+            TraducirMenuItems(menuStrip1.Items);
+            TraducirStatusStrip();
+        }
+
+        private void TraducirControles(Control.ControlCollection controles)
+        {
+            foreach (Control control in controles)
+            {
+                if (!string.IsNullOrEmpty(control.Name))
+                {
+                    string textoTraducido = Traductor.Instancia.Traducir(control.Name);
+                    if (!string.IsNullOrEmpty(textoTraducido))
+                        control.Text = textoTraducido;
+                }
+
+                if (control.HasChildren)
+                    TraducirControles(control.Controls);
+
+                if(control is ComboBox && (cmbIdiomas.Items.Count != bllIdioma.ObtenerTodos().Count)) 
+                { 
+                   CargarIdiomasMain();
+                }
+            }
+        }
+
+        private void TraducirMenuItems(ToolStripItemCollection items)
+        {
+            foreach (ToolStripItem item in items)
+            {
+                if (!string.IsNullOrEmpty(item.Name))
+                {
+                    string textoTraducido = Traductor.Instancia.Traducir(item.Name);
+                    if (!string.IsNullOrEmpty(textoTraducido))
+                        item.Text = textoTraducido;
+                }
+
+                if (item is ToolStripMenuItem menuItem && menuItem.HasDropDownItems)
+                {
+                    TraducirMenuItems(menuItem.DropDownItems);
+                }
+            }
+        }
+
+        private void TraducirStatusStrip()
+        {
+            foreach (ToolStripItem item in statusStrip1.Items)
+            {
+                if (!string.IsNullOrEmpty(item.Name))
+                {
+                    string textoTraducido = Traductor.Instancia.Traducir(item.Name);
+                    if (!string.IsNullOrEmpty(textoTraducido))
+                        item.Text = textoTraducido;
+                }
+            }
+        }
+
+
+        void cerrarFormsHijos() 
+        {
+            
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+        } 
+
+        void mostrarForm(Form form) 
+        {
+
+            form.MdiParent = this; 
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+        }
+
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             try
             {
-                DialogResult result = ConfirmationMessageBox.Mostrar("¿Deseas cerrar la sesión?", "Confirmar");
+                
+
+                DialogResult result = ConfirmationMessageBox.Mostrar(Traductor.Instancia.Traducir("CerrarSesion_Mensaje"), "ConfirmationMessageBox");
+
 
                 if (result == DialogResult.Yes)
                 {
@@ -55,10 +141,8 @@ namespace GUI
 
         private void FormAdmin_Resize(object sender, EventArgs e)
         {
-            btnCerrarSesion.Location = new Point(
-        this.ClientSize.Width - btnCerrarSesion.Width - 10,
-        this.ClientSize.Height - statusStrip1.Height - btnCerrarSesion.Height - 5
-    );
+            btnCerrarSesion.Location = new Point(this.ClientSize.Width - btnCerrarSesion.Width - 10, this.ClientSize.Height - statusStrip1.Height - btnCerrarSesion.Height - 5);
+        
         }
 
 
@@ -67,21 +151,27 @@ namespace GUI
 
         }
 
+        void CargarIdiomasMain() 
+        {
+            
+            cmbIdiomas.DataSource = bllIdioma.ObtenerTodos() ;
+            cmbIdiomas.DisplayMember = "Nombre";
+            cmbIdiomas.ValueMember = "Id";
+        }
+
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             try
             {
-                //Aquí manejamos Autorización...👇🏽👇🏽👇🏽👇🏽
-                permisosDisponibles = bLLPermiso.Listar();
+                List<Componente> patentesDisponibles = bLLComponente.Listar().Where(p => p is Patente).ToList();
 
-                if(permisosDisponibles.Count != LoginSession.Instancia.UsuarioActual.Rol.ListaPermisos.Count) 
+
+
+                foreach (Componente c in patentesDisponibles)
                 {
-                    List<Permiso> permisosFaltantes = permisosDisponibles.Where(p1 => !LoginSession.Instancia.UsuarioActual.Rol.ListaPermisos.Any(p2 => p2.Validar(p1))).ToList();
-
-
-                    foreach(Permiso pI in permisosFaltantes) 
+                    if (!LoginSession.Instancia.UsuarioActual.Permisos.Any(p => p.Validar(c)))
                     {
-                        var item = menuStrip1.Items.OfType<ToolStripItem>().FirstOrDefault(i => i.Text == pI.Nombre);
+                        var item = menuStrip1.Items.OfType<ToolStripItem>().FirstOrDefault(i => i.Name == $"{c.Nombre}ToolStripMenuItem");
 
                         if (item != null)
                         {
@@ -92,7 +182,17 @@ namespace GUI
                 }
 
 
-                toolStripStatusLabel.Text += $" {LoginSession.Instancia.UsuarioActual.Rol.Nombre} : {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
+                CargarIdiomasMain();
+
+                
+                Idioma idiomaPredeterminado = bllIdioma.ObtenerTodos().FirstOrDefault(i => i.Codigo == "es"); 
+                if (idiomaPredeterminado != null)
+                    cmbIdiomas.SelectedItem = idiomaPredeterminado;
+
+
+                //toolStripStatusLabel.Text += $" : {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
+
+
             }
             catch (Exception ex)
             {
@@ -100,22 +200,24 @@ namespace GUI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Traductor.Instancia.Desuscribir(this);
+        }
+
+
 
         private void gestionDePerfilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                // Cerrar cualquier formulario hijo que esté abierto
-                foreach (Form childForm in this.MdiChildren)
-                {
-                    childForm.Close();
-                }
+                cerrarFormsHijos();
 
-                // Crear una nueva instancia del formulario de gestión de perfiles
+                
                 GestionPerfiles gestionPerfiles = new GestionPerfiles();
-                gestionPerfiles.MdiParent = this; // Establecer FormAdmin como contenedor MDI
-                gestionPerfiles.WindowState = FormWindowState.Maximized; // Opcional: maximizar al abrir
-                gestionPerfiles.Show();
+                mostrarForm(gestionPerfiles);
 
             }
             catch (Exception ex)
@@ -124,5 +226,118 @@ namespace GUI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void gestionClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cerrarFormsHijos();
+
+
+
+                GestionClientes gestionClientes = new GestionClientes();
+                mostrarForm(gestionClientes);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gestiónDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cerrarFormsHijos();
+
+                gestionProductos gestProductos = new gestionProductos();
+
+                mostrarForm(gestProductos);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cerrarFormsHijos();
+
+                ventaProductos formVentaProductos = new ventaProductos();
+
+                mostrarForm(formVentaProductos);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cerrarFormsHijos();
+
+                mostrarForm(new ReportesVentas());
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gestionUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cerrarFormsHijos();
+                mostrarForm(new GestionUsuarios());
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gestionIdiomasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cerrarFormsHijos();
+                
+
+                mostrarForm(new GestionIdiomas());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void cmbIdiomas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbIdiomas.SelectedItem is Idioma idiomaSeleccionado)
+            {
+                Traductor.Instancia.CambiarIdioma(idiomaSeleccionado);
+                toolStripStatusLabel.Text += $" : {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
+            }
+        }
+
     }
 }
