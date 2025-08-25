@@ -102,7 +102,7 @@ namespace GUI
                 .SelectMany(f => f.ListaProductos.Select(item => new
                 {
                     Cliente = f.Cliente,
-                    ClienteDNI = f.Cliente.DNI, // Clave para agrupar
+                    ClienteDNI = f.Cliente.DNI, 
                     f.Cliente.Nombre,
                     f.Cliente.Apellido,
                     item.Producto,
@@ -118,7 +118,7 @@ namespace GUI
                 })
                 .OrderByDescending(x => x.MontoTotal)
                 .ThenByDescending(x => x.CantidadTotal)
-                .Take(10) // Solo top 10
+                .Take(10) 
                 .ToList();
 
             return resumenClientes

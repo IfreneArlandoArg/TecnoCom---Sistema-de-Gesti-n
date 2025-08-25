@@ -95,7 +95,7 @@ El sistema surge como respuesta a la necesidad de modernizar los procesos de ges
 
 ### 💻 Requisitos del Sistema:
 - Windows 10 o superior.
-- .NET 6.0+
+- .NET 8.0+
 - SQL Server 2022
 
 ### 🌐 Entorno de Desarrollo:

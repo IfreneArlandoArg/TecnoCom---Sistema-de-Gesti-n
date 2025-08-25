@@ -40,9 +40,11 @@ namespace BLL
             dalCliente.Modificar(pCliente);
         }
 
-        public List<BECliente> EncontrarCliente(int DNI) 
-        { 
-           return Listar().Where(C => C.DNI == DNI).ToList();
+        public List<BECliente> EncontrarCliente(int DNI)
+        {
+            return Listar().Where(C => C.DNI == DNI).ToList();
+
+            
         }
 
         public bool IsClientRegistererd(int pDNI)
