@@ -126,5 +126,5 @@ Este sistema sigue una arquitectura en 4 capas:
 
 ## 📬 Contacto
 
-Desarrollado por **Ifrene Arlando**  
+Desarrollado por **Ifrene Arlando A**  
 Para consultas o soporte: _[arlandoifrene@gmail.com]_
