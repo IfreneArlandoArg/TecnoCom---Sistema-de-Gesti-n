@@ -10,9 +10,14 @@ namespace BLL
     public class BLLProducto
     {
         DALProducto dalProducto = new DALProducto();
+        BLLUsuarioLog log = new BLLUsuarioLog();
         public void Alta(BEProducto pProducto)
         {
             dalProducto.Alta(pProducto);
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Alta_Producto");
+            log.Alta(beUsuarioLog);
+
+
         }
 
         public List<BEProducto> Listar()

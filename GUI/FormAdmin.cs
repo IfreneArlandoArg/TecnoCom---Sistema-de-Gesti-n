@@ -335,6 +335,9 @@ namespace GUI
             if (cmbIdiomas.SelectedItem is Idioma idiomaSeleccionado)
             {
                 Traductor.Instancia.CambiarIdioma(idiomaSeleccionado);
+
+               
+
                 toolStripStatusLabel.Text += $" : {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
             }
         }

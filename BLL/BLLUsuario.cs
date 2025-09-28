@@ -10,6 +10,7 @@ namespace BLL
     public class BLLUsuario : IUserRegistrationChecher
     {
         DALUsuario dalUsuario = new DALUsuario();
+        BLLUsuarioLog log = new BLLUsuarioLog();
         public bool IsUserRegistered(string pEmail, string pPassword, out BEUsuario UserFound)
         {
             bool returnValue = false;
@@ -33,16 +34,25 @@ namespace BLL
         public void Alta(BEUsuario pBeUsuario)
         {
             dalUsuario.Alta(pBeUsuario);
+
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Alta_Usuario");
+            log.Alta(beUsuarioLog);
         }
 
         public void Baja(BEUsuario pBEUsuario)
         {
             dalUsuario.Borrar(pBEUsuario);
+          
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Baja_Usuario");
+            log.Alta(beUsuarioLog);
         }
 
         public void Modificar(BEUsuario pBEUsuario)
         {
             dalUsuario.Modificar(pBEUsuario);
+           
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Modificacion_Usuario");
+            log.Alta(beUsuarioLog);
         }
 
         public List<BEUsuario> Listar()
@@ -53,12 +63,18 @@ namespace BLL
         public void BajaPermisoUsuario(int pIdUsuario, int pIdPermiso) 
         { 
            dalUsuario.BajaPermisoUsuario(pIdUsuario, pIdPermiso);
+           
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Baja_Permiso_Usuario");
+            log.Alta(beUsuarioLog);
         }
 
         public void AltaPermisoUsuario(int pIdUsuario, int pIdPermiso) 
         { 
             dalUsuario.AltaPermisoUsuario(pIdUsuario, pIdPermiso);
-        
+
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Alta_Permiso_Usuario");
+            log.Alta(beUsuarioLog);
+
         }
 
     }

@@ -21,6 +21,7 @@ namespace GUI
         }
 
         BLLCliente bllCliente = new BLLCliente();
+        
 
         public void ActualizarIdioma(Idioma idioma)
         {
@@ -103,6 +104,8 @@ namespace GUI
 
 
                 bllCliente.Alta(new BECliente(dni, txtNombre.Text, txtApellido.Text, txtEmail.Text));
+
+                
 
                 mostrarClientes();
 

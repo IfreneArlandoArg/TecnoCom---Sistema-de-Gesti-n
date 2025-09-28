@@ -11,6 +11,7 @@ namespace BLL
     public class BLLCliente : IClientRegistrationChecker
     {
         DALCliente dalCliente = new DALCliente();
+        BLLUsuarioLog log = new BLLUsuarioLog();
 
         public void Alta(BECliente pCliente)
         {
@@ -21,7 +22,10 @@ namespace BLL
             }
             else
             { 
-                dalCliente.Alta(pCliente); 
+                dalCliente.Alta(pCliente);
+                
+                BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Alta_Cliente");
+                log.Alta(beUsuarioLog);
             }
         }
 
@@ -33,11 +37,17 @@ namespace BLL
         public void Baja(BECliente pCliente)
         {
             dalCliente.Baja(pCliente);
+
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Baja_Cliente");
+            log.Alta(beUsuarioLog);
         }
 
         public void Modificar(BECliente pCliente)
         {
             dalCliente.Modificar(pCliente);
+
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Modificacion_Cliente");
+            log.Alta(beUsuarioLog);
         }
 
         public List<BECliente> EncontrarCliente(int DNI)

@@ -11,6 +11,7 @@ namespace BLL
     {
         DALComponente dalComponente = new DALComponente();
 
+
         public List<Componente> ObtenerJerarquia()
         {
             return dalComponente.ObtenerJerarquia();

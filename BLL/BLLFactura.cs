@@ -12,8 +12,8 @@ namespace BLL
     {
         DALFactura dalFactura = new DALFactura();
         DALProducto dalProducto = new DALProducto();
+        BLLUsuarioLog log = new BLLUsuarioLog();
 
-        
 
         public void Alta(BEFactura pFactura)
         {
@@ -28,7 +28,11 @@ namespace BLL
 
                 dalFactura.Alta(pFactura);
 
-                foreach (FacturaItem FI in pFactura.ListaProductos) 
+                BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Alta_Factura");
+                log.Alta(beUsuarioLog);
+
+
+            foreach (FacturaItem FI in pFactura.ListaProductos) 
                 {
                     FI.Producto.Stock -= FI.Cantidad;
                     
