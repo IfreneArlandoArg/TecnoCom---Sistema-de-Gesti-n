@@ -134,12 +134,13 @@ namespace GUI
                if (string.IsNullOrWhiteSpace(nombre)) 
                     throw new Exception("");
 
-                 bool esPatente = MessageBox.Show("¿Es una Patente?", "Tipo", MessageBoxButtons.YesNo) == DialogResult.Yes;
+                //bool esPatente = MessageBox.Show("¿Es una Patente?", "Tipo", MessageBoxButtons.YesNo) == DialogResult.Yes;
+               
 
                 Componente nuevo;
-                 if (esPatente)
-                  nuevo = new Patente(0, nombre);
-                 else
+                 //if (esPatente)
+                 // nuevo = new Patente(0, nombre);
+                 //else
                 nuevo = new Familia(0, nombre);
 
                 int? idPadre = null;
