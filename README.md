@@ -111,6 +111,77 @@ Se implementa en la clase `Traductor`, que mantiene una lista de observadores (`
 
 ---
 
+---
+
+## 📝 Gestión de Bitácora (Log Management)
+
+### ¿Qué problemática resuelve?
+
+La gestión de bitácora permite registrar y auditar todas las acciones críticas realizadas por los usuarios en el sistema. Esto es fundamental para:
+- Trazabilidad de operaciones sensibles.
+- Detección de errores, fraudes o accesos indebidos.
+- Cumplimiento de normativas y auditoría interna.
+
+### ¿Cómo se implementó en la solución?
+
+Se implementó un módulo de bitácora en la capa de negocio (BLL) y acceso a datos (DAL), utilizando las clases `BEUsuarioLog`, `BLLUsuarioLog` y `DALUsuarioLog`.  
+Cada vez que un usuario realiza una acción relevante (alta, baja, modificación, login, logout, cambio de idioma, etc.), se crea un registro de log con el identificador del usuario, la acción y la fecha/hora.  
+Estos registros se almacenan en la base de datos mediante procedimientos almacenados, permitiendo su consulta posterior.
+
+### Acciones registradas
+
+Entre las actividades que se auditan se incluyen:
+- Alta, baja y modificación de usuarios.
+- Alta, baja y modificación de clientes.
+- Alta, baja y modificación de productos.
+- Alta de facturas/ventas.
+- Asignación y remoción de permisos a usuarios.
+- Login, logout y cambio de idioma.
+
+### ¿Por qué estas acciones?
+
+Se priorizan acciones que afectan la seguridad, integridad y trazabilidad del sistema, permitiendo reconstruir la historia de cambios y detectar incidentes relevantes.
+
+### Importancia para auditoría
+
+La bitácora es clave para auditoría y control interno, ya que:
+- Permite saber quién hizo qué y cuándo.
+- Facilita la investigación de incidentes y el cumplimiento de normativas.
+- Proporciona evidencia ante disputas o problemas operativos.
+
+---
+
+## 🔐 Seguridad
+
+### Autenticación y Control de Acceso
+
+- **Inicio de sesión seguro:**  
+  El sistema requiere que los usuarios se autentiquen con email y contraseña para acceder a las funcionalidades.  
+  Las contraseñas se almacenan de forma segura utilizando hashing SHA256, evitando el guardado de contraseñas en texto plano.
+
+- **Gestión de sesiones:**  
+  Se utiliza el patrón Singleton para la clase `LoginSession`, asegurando que solo exista una sesión activa por usuario en la aplicación.
+
+- **Autorización basada en permisos:**  
+  El acceso a funcionalidades está controlado por un sistema de permisos jerárquico (patrón Composite).  
+  Los usuarios pueden tener permisos directos (Patente) o agrupados (Familia), y solo pueden acceder a los módulos para los que tienen autorización explícita.
+
+### Auditoría y Trazabilidad
+
+- **Bitácora de acciones (Log Management):**  
+  Todas las acciones críticas (altas, bajas, modificaciones de usuarios, clientes, productos, permisos, facturación, login, logout, cambio de idioma) se registran en una bitácora.  
+  Esto permite auditar quién realizó cada acción y cuándo, facilitando la detección de incidentes y el cumplimiento de normativas.
+
+### Protección de Datos
+
+- **Validación de datos:**  
+  Se realizan validaciones en la capa de negocio para evitar registros duplicados y asegurar la integridad de la información (por ejemplo, no se permite registrar dos clientes con el mismo DNI).
+
+- **Separación de responsabilidades:**  
+  La arquitectura en capas (BE, BLL, DAL, GUI) asegura que la lógica de negocio y el acceso a datos estén desacoplados, reduciendo riesgos de acceso indebido o manipulación directa de la base de datos.
+
+
+---
 
 ## 🧠 Definiciones y Términos
 
@@ -173,7 +244,7 @@ Se implementa en la clase `Traductor`, que mantiene una lista de observadores (`
 
 - Manual de usuario con capturas de pantalla.
 - Guía de instalación y configuración.
-- Archivo `README` detallando entorno de desarrollo y despliegue.
+- Archivo `README` detallando entorno de desarrollo y despliegue .
 
 ---
 
