@@ -209,7 +209,7 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(690, 395);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(674, 395);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(90, 23);
             this.btnCerrarSesion.TabIndex = 1;
@@ -219,19 +219,17 @@
             // 
             // cmbIdiomas
             // 
+            this.cmbIdiomas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbIdiomas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdiomas.Location = new System.Drawing.Point(629, 38);
             this.cmbIdiomas.Name = "cmbIdiomas";
-            this.cmbIdiomas.Size = new System.Drawing.Size(160, 24);
+            this.cmbIdiomas.Size = new System.Drawing.Size(139, 24);
             this.cmbIdiomas.TabIndex = 3;
             this.cmbIdiomas.SelectedIndexChanged += new System.EventHandler(this.cmbIdiomas_SelectedIndexChanged);
-            // En el InitializeComponent():
-            this.lblIdioma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbIdiomas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-
             // 
             // lblIdioma
             // 
+            this.lblIdioma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIdioma.AutoSize = true;
             this.lblIdioma.Location = new System.Drawing.Point(571, 41);
             this.lblIdioma.Name = "lblIdioma";
