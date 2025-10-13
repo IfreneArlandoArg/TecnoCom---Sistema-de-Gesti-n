@@ -342,5 +342,19 @@ namespace GUI
             }
         }
 
+        private void gestionBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cerrarFormsHijos();
+
+                mostrarForm(new GestionBitacora());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

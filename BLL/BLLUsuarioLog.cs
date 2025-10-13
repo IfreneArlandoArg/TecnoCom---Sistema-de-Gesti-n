@@ -19,5 +19,40 @@ namespace BLL
         {
             return dalUsuarioLog.Listar(pBEUsuario);
         }
+
+        public List<BEUsuarioLog> Listar()
+        {
+            return dalUsuarioLog.Listar();
+        }
+
+        public List<BEUsuarioLog> Listar(EnumAccion enumAccion)
+        {
+            return dalUsuarioLog.Listar().Where(UserLog => UserLog.Accion == enumAccion.ToString()).ToList();
+        }
+
+        public Dictionary<string, int> GetLogCountByAction()
+        {
+            var logs = Listar();
+            return logs
+                .GroupBy(log => log.Accion)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public Dictionary<int, int> GetLogCountByUser()
+        {
+            var logs = Listar();
+            return logs
+                .GroupBy(log => log.IdUsuario)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public Dictionary<DateTime, int> GetLogCountByDate()
+        {
+            var logs = Listar();
+            return logs
+                .GroupBy(log => log.FechaHora.Date)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
     }
 }

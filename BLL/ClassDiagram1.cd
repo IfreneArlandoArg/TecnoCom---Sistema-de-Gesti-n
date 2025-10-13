@@ -3,7 +3,7 @@
   <Class Name="BLL.BLLUsuario" BaseTypeListCollapsed="true">
     <Position X="12.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAEAAAAAACAAIAAABAAAAQAAAAAAAAQAAAAQ=</HashCode>
+      <HashCode>AAEAAAAAAEAAAAAACAAICAABAAAAQAAAAAAAAQAAAAQ=</HashCode>
       <FileName>BLLUsuario.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -11,7 +11,7 @@
   <Class Name="BLL.BLLUsuarioLog">
     <Position X="7" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAAAAAAAACAAAAEAAAAUAAAAAAAAAQAAAA=</HashCode>
       <FileName>BLLUsuarioLog.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -32,7 +32,7 @@
   <Class Name="BLL.BLLCliente">
     <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAQAAAACAAAAAAAAAADQAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAEAQAAAACAAACAAAAAADQAAAAAAAAAAAAAQ=</HashCode>
       <FileName>BLLCliente.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -40,14 +40,14 @@
   <Class Name="BLL.BLLProducto">
     <Position X="1" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAAAAACAAAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAAAAAAAACACAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
       <FileName>BLLProducto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BLL.BLLFactura">
     <Position X="5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAABAAAAAAAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAAAABAAAAACAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
       <FileName>BLLFactura.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -75,7 +75,7 @@
   <Class Name="BLL.Traductor">
     <Position X="1" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQEAAAAADAAACAABKAAAAAAAAAEEAAACAAAAAACAAA=</HashCode>
+      <HashCode>AAQEAAAAADAAACAABKAACAAAAAAEEAAACAAAAAACAAA=</HashCode>
       <FileName>Traductor.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -100,5 +100,19 @@
       <FileName>IClientRegistrationChecker.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Enum Name="BLL.OrderBy">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAQ=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BLL.EnumAccion">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACQEAAAAAAAAAAQABAIABAAERBAABAAQAAKAAAA=</HashCode>
+      <FileName>Enum1.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -46,7 +46,7 @@ namespace DAL
 
                 while (reader.Read()) 
                 { 
-                   BEUsuarioLog tmpUsuario = new BEUsuarioLog(reader["IDLOG"].ToString(), reader["IDUSARIO"].ToString(), reader["FECHAHORA"].ToString(), reader["ACCION"].ToString() );
+                   BEUsuarioLog tmpUsuario = new BEUsuarioLog(reader["IDLOG"].ToString(), reader["IDUSUARIO"].ToString(), reader["FECHAHORA"].ToString(), reader["ACCION"].ToString() );
 
                     tmp.Add(tmpUsuario);
                 }
@@ -57,5 +57,44 @@ namespace DAL
             return tmp;
 
         }
+
+
+
+
+        public List<BEUsuarioLog> Listar()
+        {
+            List<BEUsuarioLog> tmp = new List<BEUsuarioLog>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("LISTAR_LOGS", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                
+
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    BEUsuarioLog tmpUsuario = new BEUsuarioLog(reader["IDLOG"].ToString(), reader["IDUSUARIO"].ToString(), reader["FECHAHORA"].ToString(), reader["ACCION"].ToString());
+
+                    tmp.Add(tmpUsuario);
+                }
+
+            }
+
+
+            return tmp;
+
+        }
+
+
     }
+
+
+
+
+
 }

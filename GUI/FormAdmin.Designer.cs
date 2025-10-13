@@ -59,6 +59,7 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.cmbIdiomas = new System.Windows.Forms.ComboBox();
             this.lblIdioma = new System.Windows.Forms.Label();
+            this.gestionBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,7 @@
             // gestionClientesToolStripMenuItem
             // 
             this.gestionClientesToolStripMenuItem.Name = "gestionClientesToolStripMenuItem";
-            this.gestionClientesToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.gestionClientesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gestionClientesToolStripMenuItem.Text = "Gestion clientes";
             this.gestionClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionClientesToolStripMenuItem_Click);
             // 
@@ -133,7 +134,7 @@
             // nuevaVentaToolStripMenuItem
             // 
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
-            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva venta ";
             this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
             // 
@@ -148,7 +149,7 @@
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(135, 26);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem1_Click);
             // 
@@ -157,7 +158,8 @@
             this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDePerfilesToolStripMenuItem,
             this.gestionUsuariosToolStripMenuItem,
-            this.gestionIdiomasToolStripMenuItem});
+            this.gestionIdiomasToolStripMenuItem,
+            this.gestionBitacoraToolStripMenuItem});
             this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
             this.administracionToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.administracionToolStripMenuItem.Text = "Administración";
@@ -165,21 +167,21 @@
             // gestionDePerfilesToolStripMenuItem
             // 
             this.gestionDePerfilesToolStripMenuItem.Name = "gestionDePerfilesToolStripMenuItem";
-            this.gestionDePerfilesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.gestionDePerfilesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gestionDePerfilesToolStripMenuItem.Text = "Gestion de perfiles";
             this.gestionDePerfilesToolStripMenuItem.Click += new System.EventHandler(this.gestionDePerfilesToolStripMenuItem_Click);
             // 
             // gestionUsuariosToolStripMenuItem
             // 
             this.gestionUsuariosToolStripMenuItem.Name = "gestionUsuariosToolStripMenuItem";
-            this.gestionUsuariosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.gestionUsuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gestionUsuariosToolStripMenuItem.Text = "Gestion Usuarios";
             this.gestionUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionUsuariosToolStripMenuItem_Click);
             // 
             // gestionIdiomasToolStripMenuItem
             // 
             this.gestionIdiomasToolStripMenuItem.Name = "gestionIdiomasToolStripMenuItem";
-            this.gestionIdiomasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.gestionIdiomasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gestionIdiomasToolStripMenuItem.Text = "Gestion Idiomas";
             this.gestionIdiomasToolStripMenuItem.Click += new System.EventHandler(this.gestionIdiomasToolStripMenuItem_Click);
             // 
@@ -237,6 +239,13 @@
             this.lblIdioma.TabIndex = 2;
             this.lblIdioma.Text = "Idioma:";
             // 
+            // gestionBitacoraToolStripMenuItem
+            // 
+            this.gestionBitacoraToolStripMenuItem.Name = "gestionBitacoraToolStripMenuItem";
+            this.gestionBitacoraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestionBitacoraToolStripMenuItem.Text = "Gestion bitacora";
+            this.gestionBitacoraToolStripMenuItem.Click += new System.EventHandler(this.gestionBitacoraToolStripMenuItem_Click);
+            // 
             // FormAdmin
             // 
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -271,6 +280,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionIdiomasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionBitacoraToolStripMenuItem;
     }
 }
 
