@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class GestionBitacora
+    partial class GestionBitacoraForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartLogManagement = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dtgvLogs = new System.Windows.Forms.DataGridView();
             this.comboBoxFacts = new System.Windows.Forms.ComboBox();
             this.comboBoxActions = new System.Windows.Forms.ComboBox();
+            this.lstBUserLog = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartLogManagement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLogs)).BeginInit();
             this.SuspendLayout();
             // 
             // chartLogManagement
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartLogManagement.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartLogManagement.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chartLogManagement.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartLogManagement.Legends.Add(legend4);
             this.chartLogManagement.Location = new System.Drawing.Point(915, 152);
             this.chartLogManagement.Name = "chartLogManagement";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartLogManagement.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartLogManagement.Series.Add(series4);
             this.chartLogManagement.Size = new System.Drawing.Size(420, 300);
             this.chartLogManagement.TabIndex = 0;
             this.chartLogManagement.Text = "chart1";
@@ -65,6 +66,7 @@
             this.dtgvLogs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLogs.Size = new System.Drawing.Size(648, 387);
             this.dtgvLogs.TabIndex = 1;
+            this.dtgvLogs.SelectionChanged += new System.EventHandler(this.dtgvLogs_SelectionChanged);
             // 
             // comboBoxFacts
             // 
@@ -84,19 +86,29 @@
             this.comboBoxActions.TabIndex = 3;
             this.comboBoxActions.SelectedIndexChanged += new System.EventHandler(this.comboBoxActions_SelectedIndexChanged);
             // 
-            // GestionBitacora
+            // lstBUserLog
+            // 
+            this.lstBUserLog.FormattingEnabled = true;
+            this.lstBUserLog.ItemHeight = 16;
+            this.lstBUserLog.Location = new System.Drawing.Point(421, 553);
+            this.lstBUserLog.Name = "lstBUserLog";
+            this.lstBUserLog.Size = new System.Drawing.Size(311, 52);
+            this.lstBUserLog.TabIndex = 4;
+            // 
+            // GestionBitacoraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1446, 977);
             this.ControlBox = false;
+            this.Controls.Add(this.lstBUserLog);
             this.Controls.Add(this.comboBoxActions);
             this.Controls.Add(this.comboBoxFacts);
             this.Controls.Add(this.dtgvLogs);
             this.Controls.Add(this.chartLogManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GestionBitacora";
+            this.Name = "GestionBitacoraForm";
             this.Text = "GestionBitacora";
             this.Load += new System.EventHandler(this.GestionBitacora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartLogManagement)).EndInit();
@@ -111,5 +123,6 @@
         private System.Windows.Forms.DataGridView dtgvLogs;
         private System.Windows.Forms.ComboBox comboBoxFacts;
         private System.Windows.Forms.ComboBox comboBoxActions;
+        private System.Windows.Forms.ListBox lstBUserLog;
     }
 }

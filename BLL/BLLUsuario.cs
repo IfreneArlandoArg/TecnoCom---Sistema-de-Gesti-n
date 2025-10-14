@@ -17,7 +17,7 @@ namespace BLL
             UserFound = null;
 
 
-            foreach(BEUsuario pUser in Listar()) 
+            foreach(BEUsuario pUser in ListarActivos()) 
             { 
                 if(pUser.Email == pEmail && pUser.PasswordHash == pPassword) 
                 { 
@@ -55,9 +55,24 @@ namespace BLL
             log.Alta(beUsuarioLog);
         }
 
+        public List<BEUsuario> ListarActivos()
+        {
+            return dalUsuario.ListarActivos();
+        }
+
         public List<BEUsuario> Listar()
         {
             return dalUsuario.Listar();
+        }
+
+        public List<BEUsuario> Listar(int IdUsuario)
+        {
+            return dalUsuario.Listar().Where(User => User.IdUsuario == IdUsuario).ToList();
+        }
+
+        public BEUsuario getUsuario(int IdUsuario)
+        {
+            return dalUsuario.Listar().Where(User => User.IdUsuario == IdUsuario).FirstOrDefault();
         }
 
         public void BajaPermisoUsuario(int pIdUsuario, int pIdPermiso) 

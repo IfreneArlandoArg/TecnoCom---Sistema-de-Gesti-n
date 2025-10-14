@@ -112,6 +112,10 @@ namespace GUI
             return nodo;
         }
 
+        void mostrarUsuarios()
+        {
+            mostrar(dtgvUsuarios, bllUsuario.Listar());
+        }
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
@@ -119,7 +123,7 @@ namespace GUI
             {
                 ActualizarIdioma(Traductor.Instancia.IdiomaActual);
 
-                mostrar(dtgvUsuarios, bllUsuario.Listar());
+                mostrarUsuarios();
 
                 mostrarLstBox(listBox1, null);
                 lblNombreUsuarioTmp.Text = string.Empty;
@@ -180,7 +184,7 @@ namespace GUI
 
                 bllUsuario.Alta(tmpUsuario);
 
-                mostrar(dtgvUsuarios, bllUsuario.Listar());
+                mostrarUsuarios();
 
 
             }
@@ -235,7 +239,7 @@ namespace GUI
                 bllUsuario.Modificar(tmpUsuario);
 
 
-                mostrar(dtgvUsuarios, bllUsuario.Listar());
+                mostrarUsuarios();
 
             }
             catch (Exception ex)
@@ -254,7 +258,7 @@ namespace GUI
 
                 bllUsuario.Baja(dtgvUsuarios.CurrentRow.DataBoundItem as BEUsuario);
 
-                mostrar(dtgvUsuarios, bllUsuario.Listar());
+                mostrarUsuarios();
             }
             catch (Exception ex)
             {
@@ -325,7 +329,7 @@ namespace GUI
 
                 bllUsuario.AltaPermisoUsuario(tmpUsuario.IdUsuario, tmpComponente.Id);
 
-                mostrar(dtgvUsuarios, bllUsuario.Listar());
+                mostrarUsuarios();
 
                 if(dtgvUsuarios.SelectedRows.Count > 0)
                 mostrarLstBox(listBox1, (dtgvUsuarios.CurrentRow.DataBoundItem as BEUsuario).Permisos);
@@ -357,7 +361,7 @@ namespace GUI
 
                 bllUsuario.BajaPermisoUsuario(tmpUsuario.IdUsuario, tmpComponente.Id);
 
-                mostrar(dtgvUsuarios, bllUsuario.Listar());
+                mostrarUsuarios();
 
                 if (dtgvUsuarios.SelectedRows.Count > 0)
                     mostrarLstBox(listBox1, (dtgvUsuarios.CurrentRow.DataBoundItem as BEUsuario).Permisos);

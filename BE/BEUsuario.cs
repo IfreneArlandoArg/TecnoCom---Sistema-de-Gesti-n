@@ -76,7 +76,17 @@ namespace BE
            
         }
 
-        
+        public override string ToString()
+        {
+            return $"{Apellido}, {Nombre} - {(Activo ? "Activo" : "Inactivo")}\r\n";
+
+        }
+
+        public string NombreCompleto()
+        {
+            return $"{Apellido}, {Nombre}";
+        }
+
 
 
     }

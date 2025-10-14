@@ -22,12 +22,17 @@ namespace BLL
 
         public List<BEUsuarioLog> Listar()
         {
-            return dalUsuarioLog.Listar();
+            return dalUsuarioLog.Listar()
+                   .OrderByDescending(UserLog => UserLog.FechaHora)
+                   .ToList();
         }
 
         public List<BEUsuarioLog> Listar(EnumAccion enumAccion)
         {
-            return dalUsuarioLog.Listar().Where(UserLog => UserLog.Accion == enumAccion.ToString()).ToList();
+            return dalUsuarioLog.Listar()
+                .Where(UserLog => UserLog.Accion == enumAccion.ToString())
+                .OrderByDescending(UserLog => UserLog.FechaHora)
+                .ToList();
         }
 
         public Dictionary<string, int> GetLogCountByAction()

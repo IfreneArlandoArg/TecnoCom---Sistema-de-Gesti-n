@@ -13,19 +13,61 @@ using BE;
 
 namespace GUI
 {
-    public partial class GestionBitacora : Form
+    public partial class GestionBitacoraForm : Form, IIdiomaObserver
     {
-        public GestionBitacora()
+        public GestionBitacoraForm()
         {
             InitializeComponent();
+            Traductor.Instancia.Suscribir(this);
         }
 
         BLLUsuarioLog bllUsuarioLog = new BLLUsuarioLog();
+        BLLUsuario bLLUsuario = new BLLUsuario();
 
         void mostrarDTGV(DataGridView dtgv, object pO)
         {
             dtgv.DataSource = null;
             dtgv.DataSource = pO;
+        }
+
+        public void ActualizarIdioma(Idioma idioma)
+        {
+            this.Text = Traductor.Instancia.Traducir(this.Name);
+            TraducirControles(this.Controls);
+        }
+
+        private void TraducirControles(Control.ControlCollection controles) 
+        {
+            foreach (Control control in controles) 
+            {
+
+                if (!string.IsNullOrEmpty(control.Name) && !(control is TextBox) && !(control is ComboBox))
+                {
+                    string textoTraducido = Traductor.Instancia.Traducir(control.Name);
+                    if (!string.IsNullOrEmpty(textoTraducido))
+                        control.Text = textoTraducido;
+                }
+
+
+                if (control.HasChildren )
+                    TraducirControles(control.Controls);
+
+                if (control is TextBox)
+                {
+                    control.Text = String.Empty;
+                }
+
+                if(control is ComboBox)
+                {
+                    (control as ComboBox).Items.Clear();
+
+                    LoadComboBoxes();
+
+                }
+
+                
+
+            }
         }
 
 
@@ -99,7 +141,7 @@ namespace GUI
 
             comboBoxActions.SelectedIndex = 0;
 
-
+            
         }
       
         private void GestionBitacora_Load(object sender, EventArgs e)
@@ -168,6 +210,27 @@ namespace GUI
 
 
 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgvLogs_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dtgvLogs.SelectedRows.Count > 0)
+                {
+                    lstBUserLog.DataSource = null;
+                    lstBUserLog.DataSource = bLLUsuario.Listar((dtgvLogs.CurrentRow.DataBoundItem as BEUsuarioLog).IdUsuario);
+                }
+                else
+                {
+                    lstBUserLog.DataSource = null;
                 }
             }
             catch (Exception ex)

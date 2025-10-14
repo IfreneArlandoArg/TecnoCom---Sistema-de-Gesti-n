@@ -348,7 +348,7 @@ namespace GUI
             {
                 cerrarFormsHijos();
 
-                mostrarForm(new GestionBitacora());
+                mostrarForm(new GestionBitacoraForm());
             }
             catch (Exception ex)
             {

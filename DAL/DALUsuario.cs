@@ -45,13 +45,13 @@ namespace DAL
             }
         }
 
-        public List<BEUsuario> Listar()
+        public List<BEUsuario> ListarActivos()
         {
             List<BEUsuario> tmp = new List<BEUsuario>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("LISTAR_USUARIOS", conn);
+                SqlCommand cmd = new SqlCommand("LISTAR_USUARIOS_ACTIVOS", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 conn.Open();
@@ -81,6 +81,45 @@ namespace DAL
             return tmp;
         }
 
+
+        public List<BEUsuario> Listar()
+        {
+            List<BEUsuario> tmp = new List<BEUsuario>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("LISTAR_USUARIOS", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    BEUsuario usrTmp = new BEUsuario(reader["IDUSUARIO"].ToString(), reader["NOMBRE"].ToString(),
+                        reader["APELLIDO"].ToString(), reader["FECHA_NACIMIENTO"].ToString(), reader["ACTIVO"].ToString(),
+                        reader["EMAIL"].ToString(), reader["PASSWORD_HASH"].ToString());
+
+
+                    //Aca agregamos los permisos... 
+                    AgregarPermisosUsuario(usrTmp);
+
+
+                    tmp.Add(usrTmp);
+
+
+                }
+
+            }
+
+
+            return tmp;
+        }
+
+
+
         public void Modificar(BEUsuario pBeUsuario)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -95,6 +134,7 @@ namespace DAL
                 
                 cmd.Parameters.Add(new SqlParameter("@pEMAIL", pBeUsuario.Email));
                 cmd.Parameters.Add(new SqlParameter("@pPASSWORD_HASH", pBeUsuario.PasswordHash));
+                cmd.Parameters.Add(new SqlParameter("@pACTIVO", pBeUsuario.Activo));
 
 
                 conn.Open();
