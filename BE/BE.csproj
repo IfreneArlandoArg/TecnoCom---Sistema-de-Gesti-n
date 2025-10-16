@@ -158,6 +158,7 @@
     <Compile Include="BECliente.cs" />
     <Compile Include="BEFactura.cs" />
     <Compile Include="BEProducto.cs" />
+    <Compile Include="BEProductoPrecioLog.cs" />
     <Compile Include="BEUsuario.cs" />
     <Compile Include="BEUsuarioLog.cs" />
     <Compile Include="Componente.cs" />

@@ -3,7 +3,7 @@
   <Class Name="BE.BEUsuario">
     <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EACAAAQAACAAAAAEAAAAgAAAAAAAAAAgAAAAAgAAAAo=</HashCode>
+      <HashCode>EACAAAQAACAAAAAEAAAAgABAAAAAAAAgAAAAAgAAAAo=</HashCode>
       <FileName>BEUsuario.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -75,6 +75,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAgAAAAIAAAEAAAAAAAAAAAAAQAAAAAAAEAAAAA=</HashCode>
       <FileName>Componente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.BEProductoPrecioLog">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACQAAAAICAEAAAAAAAAQAIAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>BEProductoPrecioLog.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="BE.EnumEstado">

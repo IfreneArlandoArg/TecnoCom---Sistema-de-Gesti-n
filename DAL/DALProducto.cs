@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace DAL
@@ -32,6 +33,44 @@ namespace DAL
 
             }
 
+        }
+
+       
+
+        public void Modificar(BEProducto pProducto)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("MODIFICAR_PRODUCTO", conn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@ID_PRODUCTO", pProducto.ID));
+                cmd.Parameters.Add(new SqlParameter("@NOMBRE", pProducto.Nombre));
+                cmd.Parameters.Add(new SqlParameter("@DESCRIPCION", pProducto.Descripcion));
+                cmd.Parameters.Add(new SqlParameter("@PRECIO", pProducto.Precio));
+                cmd.Parameters.Add(new SqlParameter("@STOCK", pProducto.Stock));
+
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+
+
+            }
+
+        }
+
+        public void Baja(BEProducto pProducto)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("BAJA_PRODUCTO", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@ID_PRODUCTO", pProducto.ID));
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public List<BEProducto> Listar()

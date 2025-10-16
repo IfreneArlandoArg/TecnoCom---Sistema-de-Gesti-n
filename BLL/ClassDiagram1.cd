@@ -3,7 +3,7 @@
   <Class Name="BLL.BLLUsuario" BaseTypeListCollapsed="true">
     <Position X="12.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAEAAAAAACAAICAABAAAAQAAAAAAAAQAAAAQ=</HashCode>
+      <HashCode>AAEAAAAAAEAAAAAACAAICAABAEAAQABAAAAAAQAAAAQ=</HashCode>
       <FileName>BLLUsuario.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -40,7 +40,7 @@
   <Class Name="BLL.BLLProducto">
     <Position X="1" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAAAAACACAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAEAAgACACACACAAAAAAIQAAAAAAAAAAAAAA=</HashCode>
       <FileName>BLLProducto.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -79,6 +79,13 @@
       <FileName>Traductor.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BLL.BLLProductoPrecioLog">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAEAAAYAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLLProductoPrecioLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="BLL.IUserRegistrationChecher">
     <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
@@ -101,7 +108,7 @@
     </TypeIdentifier>
   </Interface>
   <Enum Name="BLL.OrderBy">
-    <Position X="8.5" Y="3.75" Width="1.5" />
+    <Position X="9" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAQ=</HashCode>
       <FileName>Order.cs</FileName>

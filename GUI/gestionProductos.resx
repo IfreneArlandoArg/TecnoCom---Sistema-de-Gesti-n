@@ -141,13 +141,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtgvProductos.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>4</value>
   </data>
   <data name="lblNombreProducto.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblNombreProducto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 414</value>
+    <value>62, 62</value>
   </data>
   <data name="lblNombreProducto.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 16</value>
@@ -165,13 +165,13 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblNombreProducto.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;lblNombreProducto.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="txtNombre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 410</value>
+    <value>134, 58</value>
   </data>
   <data name="txtNombre.Size" type="System.Drawing.Size, System.Drawing">
     <value>358, 22</value>
@@ -186,13 +186,13 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtNombre.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;txtNombre.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="txtDescripcion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 461</value>
+    <value>134, 109</value>
   </data>
   <data name="txtDescripcion.Size" type="System.Drawing.Size, System.Drawing">
     <value>358, 22</value>
@@ -207,16 +207,16 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtDescripcion.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;txtDescripcion.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="lblDescripcion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblDescripcion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 465</value>
+    <value>36, 113</value>
   </data>
   <data name="lblDescripcion.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 16</value>
@@ -234,7 +234,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblDescripcion.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;lblDescripcion.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPrecio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 514</value>
+    <value>68, 162</value>
   </data>
   <data name="lblPrecio.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 16</value>
@@ -265,13 +265,13 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPrecio.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;lblPrecio.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="btnAlta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 606</value>
+    <value>414, 252</value>
   </data>
   <data name="btnAlta.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 29</value>
@@ -289,7 +289,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnAlta.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;btnAlta.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -298,7 +298,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBaja.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 606</value>
+    <value>579, 371</value>
   </data>
   <data name="btnBaja.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 29</value>
@@ -319,13 +319,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBaja.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnModificar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnModificar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 606</value>
+    <value>676, 371</value>
   </data>
   <data name="btnModificar.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 29</value>
@@ -346,10 +346,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnModificar.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="numStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 558</value>
+    <value>137, 206</value>
   </data>
   <data name="numStock.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
@@ -364,13 +364,13 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numStock.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;numStock.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="numPrecio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>410, 512</value>
+    <value>136, 160</value>
   </data>
   <data name="numPrecio.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
@@ -385,10 +385,10 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;numPrecio.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;numPrecio.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="lblStock.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -397,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>346, 562</value>
+    <value>72, 210</value>
   </data>
   <data name="lblStock.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 16</value>
@@ -415,9 +415,60 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblStock.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBoxAlta</value>
   </data>
   <data name="&gt;&gt;lblStock.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBoxAlta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>254, 436</value>
+  </data>
+  <data name="groupBoxAlta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>513, 315</value>
+  </data>
+  <data name="groupBoxAlta.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="groupBoxAlta.Text" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAlta.Name" xml:space="preserve">
+    <value>groupBoxAlta</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAlta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAlta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAlta.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxAlta.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxAlta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 380</value>
+  </data>
+  <data name="checkBoxAlta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="checkBoxAlta.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="checkBoxAlta.Text" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlta.Name" xml:space="preserve">
+    <value>checkBoxAlta</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlta.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -427,7 +478,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1669, 769</value>
+    <value>1669, 894</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>gestionProductos</value>

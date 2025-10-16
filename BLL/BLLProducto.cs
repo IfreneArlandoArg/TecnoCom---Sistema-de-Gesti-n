@@ -11,6 +11,9 @@ namespace BLL
     {
         DALProducto dalProducto = new DALProducto();
         BLLUsuarioLog log = new BLLUsuarioLog();
+        BLLProductoPrecioLog bllProductoPrecioLog = new BLLProductoPrecioLog();
+
+
         public void Alta(BEProducto pProducto)
         {
             dalProducto.Alta(pProducto);
@@ -18,6 +21,11 @@ namespace BLL
             log.Alta(beUsuarioLog);
 
 
+        }
+
+        public BEProducto ObtenerPorId(int id)
+        {
+            return Listar().FirstOrDefault(p => p.ID == id);
         }
 
         public List<BEProducto> Listar()
@@ -30,6 +38,23 @@ namespace BLL
             return Listar().Where(P => P.Stock > 0).ToList();
         }
 
+        public void Modificar(BEProducto pBEProducto)
+        {
+            BEProductoPrecioLog productoPrecioLog = new BEProductoPrecioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, pBEProducto.ID, pBEProducto.Precio);
+            bllProductoPrecioLog.Alta(productoPrecioLog);
+
+            dalProducto.Modificar(pBEProducto);
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Modificacion_Producto");
+            log.Alta(beUsuarioLog);
+        }
+
+
+        public void baja(BEProducto pBEProducto)
+        {
+            dalProducto.Baja(pBEProducto);
+            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Baja_Producto");
+            log.Alta(beUsuarioLog);
+        }
 
     }
 }

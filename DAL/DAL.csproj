@@ -160,6 +160,7 @@
     <Compile Include="DALFactura.cs" />
     <Compile Include="DALIdioma.cs" />
     <Compile Include="DALProducto.cs" />
+    <Compile Include="DALProductoPrecioLog.cs" />
     <Compile Include="DALTraduccion.cs" />
     <Compile Include="DALUsuario.cs" />
     <Compile Include="DALUsuarioLog.cs" />

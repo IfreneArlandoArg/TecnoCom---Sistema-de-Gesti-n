@@ -41,9 +41,12 @@
             this.numStock = new System.Windows.Forms.NumericUpDown();
             this.numPrecio = new System.Windows.Forms.NumericUpDown();
             this.lblStock = new System.Windows.Forms.Label();
+            this.groupBoxAlta = new System.Windows.Forms.GroupBox();
+            this.checkBoxAlta = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
+            this.groupBoxAlta.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvProductos
@@ -92,12 +95,14 @@
             resources.ApplyResources(this.btnBaja, "btnBaja");
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnModificar
             // 
             resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // numStock
             // 
@@ -124,23 +129,38 @@
             resources.ApplyResources(this.lblStock, "lblStock");
             this.lblStock.Name = "lblStock";
             // 
+            // groupBoxAlta
+            // 
+            this.groupBoxAlta.Controls.Add(this.lblNombreProducto);
+            this.groupBoxAlta.Controls.Add(this.lblStock);
+            this.groupBoxAlta.Controls.Add(this.lblPrecio);
+            this.groupBoxAlta.Controls.Add(this.txtDescripcion);
+            this.groupBoxAlta.Controls.Add(this.txtNombre);
+            this.groupBoxAlta.Controls.Add(this.btnAlta);
+            this.groupBoxAlta.Controls.Add(this.numStock);
+            this.groupBoxAlta.Controls.Add(this.numPrecio);
+            this.groupBoxAlta.Controls.Add(this.lblDescripcion);
+            resources.ApplyResources(this.groupBoxAlta, "groupBoxAlta");
+            this.groupBoxAlta.Name = "groupBoxAlta";
+            this.groupBoxAlta.TabStop = false;
+            // 
+            // checkBoxAlta
+            // 
+            resources.ApplyResources(this.checkBoxAlta, "checkBoxAlta");
+            this.checkBoxAlta.Name = "checkBoxAlta";
+            this.checkBoxAlta.UseVisualStyleBackColor = true;
+            this.checkBoxAlta.CheckedChanged += new System.EventHandler(this.checkBoxAlta_CheckedChanged);
+            // 
             // gestionProductos
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ControlBox = false;
-            this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.numPrecio);
-            this.Controls.Add(this.numStock);
+            this.Controls.Add(this.checkBoxAlta);
+            this.Controls.Add(this.groupBoxAlta);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBaja);
-            this.Controls.Add(this.btnAlta);
-            this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombreProducto);
             this.Controls.Add(this.dtgvProductos);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -149,6 +169,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
+            this.groupBoxAlta.ResumeLayout(false);
+            this.groupBoxAlta.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +190,7 @@
         private System.Windows.Forms.NumericUpDown numStock;
         private System.Windows.Forms.NumericUpDown numPrecio;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.GroupBox groupBoxAlta;
+        private System.Windows.Forms.CheckBox checkBoxAlta;
     }
 }

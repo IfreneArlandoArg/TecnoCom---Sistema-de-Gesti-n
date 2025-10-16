@@ -161,6 +161,7 @@
     <Compile Include="BLLFactura.cs" />
     <Compile Include="BLLIdioma.cs" />
     <Compile Include="BLLProducto.cs" />
+    <Compile Include="BLLProductoPrecioLog.cs" />
     <Compile Include="BLLTraduccion.cs" />
     <Compile Include="BLLUsuario.cs" />
     <Compile Include="BLLUsuarioLog.cs" />
