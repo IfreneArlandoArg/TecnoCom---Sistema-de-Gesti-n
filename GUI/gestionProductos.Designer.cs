@@ -43,10 +43,16 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.groupBoxAlta = new System.Windows.Forms.GroupBox();
             this.checkBoxAlta = new System.Windows.Forms.CheckBox();
+            this.dtgvLogsPrecios = new System.Windows.Forms.DataGridView();
+            this.groupBoxLogsInfo = new System.Windows.Forms.GroupBox();
+            this.listBoxUsuarios = new System.Windows.Forms.ListBox();
+            this.btnRollback = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.groupBoxAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLogsPrecios)).BeginInit();
+            this.groupBoxLogsInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvProductos
@@ -57,6 +63,7 @@
             this.dtgvProductos.Name = "dtgvProductos";
             this.dtgvProductos.RowTemplate.Height = 24;
             this.dtgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvProductos.SelectionChanged += new System.EventHandler(this.dtgvProductos_SelectionChanged);
             // 
             // lblNombreProducto
             // 
@@ -151,12 +158,44 @@
             this.checkBoxAlta.UseVisualStyleBackColor = true;
             this.checkBoxAlta.CheckedChanged += new System.EventHandler(this.checkBoxAlta_CheckedChanged);
             // 
+            // dtgvLogsPrecios
+            // 
+            this.dtgvLogsPrecios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dtgvLogsPrecios, "dtgvLogsPrecios");
+            this.dtgvLogsPrecios.Name = "dtgvLogsPrecios";
+            this.dtgvLogsPrecios.RowTemplate.Height = 24;
+            this.dtgvLogsPrecios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvLogsPrecios.SelectionChanged += new System.EventHandler(this.dtgvLogsPrecios_SelectionChanged);
+            // 
+            // groupBoxLogsInfo
+            // 
+            this.groupBoxLogsInfo.Controls.Add(this.btnRollback);
+            this.groupBoxLogsInfo.Controls.Add(this.listBoxUsuarios);
+            this.groupBoxLogsInfo.Controls.Add(this.dtgvLogsPrecios);
+            resources.ApplyResources(this.groupBoxLogsInfo, "groupBoxLogsInfo");
+            this.groupBoxLogsInfo.Name = "groupBoxLogsInfo";
+            this.groupBoxLogsInfo.TabStop = false;
+            // 
+            // listBoxUsuarios
+            // 
+            this.listBoxUsuarios.FormattingEnabled = true;
+            resources.ApplyResources(this.listBoxUsuarios, "listBoxUsuarios");
+            this.listBoxUsuarios.Name = "listBoxUsuarios";
+            // 
+            // btnRollback
+            // 
+            resources.ApplyResources(this.btnRollback, "btnRollback");
+            this.btnRollback.Name = "btnRollback";
+            this.btnRollback.UseVisualStyleBackColor = true;
+            this.btnRollback.Click += new System.EventHandler(this.btnRollback_Click);
+            // 
             // gestionProductos
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ControlBox = false;
+            this.Controls.Add(this.groupBoxLogsInfo);
             this.Controls.Add(this.checkBoxAlta);
             this.Controls.Add(this.groupBoxAlta);
             this.Controls.Add(this.btnModificar);
@@ -171,6 +210,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
             this.groupBoxAlta.ResumeLayout(false);
             this.groupBoxAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLogsPrecios)).EndInit();
+            this.groupBoxLogsInfo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +233,9 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.GroupBox groupBoxAlta;
         private System.Windows.Forms.CheckBox checkBoxAlta;
+        private System.Windows.Forms.DataGridView dtgvLogsPrecios;
+        private System.Windows.Forms.GroupBox groupBoxLogsInfo;
+        private System.Windows.Forms.ListBox listBoxUsuarios;
+        private System.Windows.Forms.Button btnRollback;
     }
 }

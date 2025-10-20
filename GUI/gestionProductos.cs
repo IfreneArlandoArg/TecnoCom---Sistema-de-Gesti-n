@@ -21,6 +21,8 @@ namespace GUI
         }
 
         BLLProducto bllProducto = new BLLProducto();
+        BLLProductoPrecioLog bllProductoPrecioLog = new BLLProductoPrecioLog();
+        BLLUsuario bllUsuario = new BLLUsuario();
 
         public void ActualizarIdioma(Idioma idioma)
         {
@@ -161,6 +163,81 @@ namespace GUI
                  
                    groupBoxAlta.Visible = checkBoxAlta.Checked;
                 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dtgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dtgvProductos.SelectedRows.Count > 0) 
+                { 
+                   mostrar(dtgvLogsPrecios, bllProductoPrecioLog.Listar((dtgvProductos.CurrentRow.DataBoundItem as BEProducto).ID));
+                }
+                else 
+                { 
+                   mostrar(dtgvLogsPrecios, new List<BEProductoPrecioLog>());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dtgvLogsPrecios_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtgvLogsPrecios.SelectedRows.Count > 0) 
+                {
+                    listBoxUsuarios.DataSource = null;
+                    listBoxUsuarios.DataSource = bllUsuario.Listar((dtgvLogsPrecios.CurrentRow.DataBoundItem as BEProductoPrecioLog).getIdUsuario());
+                }
+                else
+                {
+                    listBoxUsuarios.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRollback_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dtgvLogsPrecios.SelectedRows.Count == 0)
+                    throw new Exception("No hay ningún log seleccionado...\nNo se hicieron\\registró ningún cambio de precio.");
+
+                BEProducto prodSeleccionado = (BEProducto)dtgvProductos.CurrentRow.DataBoundItem;
+
+                BEProductoPrecioLog logSeleccionado = (BEProductoPrecioLog)dtgvLogsPrecios.CurrentRow.DataBoundItem;
+
+                prodSeleccionado.Precio = logSeleccionado.Precio;
+
+                if (prodSeleccionado.Nombre == string.Empty)
+                    throw new Exception("Campo nombre vacio...");
+                if (prodSeleccionado.Descripcion == string.Empty)
+                    throw new Exception("Campo descripción vacio...");
+                if (prodSeleccionado.Precio <= 0)
+                    throw new Exception("El precio debe ser mayor a 0...");
+                if (prodSeleccionado.Stock < 0)
+                    throw new Exception("El stock no puede ser negativo...");
+
+                bllProducto.Modificar(prodSeleccionado);
+
+                mostrarProductos();
+
             }
             catch (Exception ex)
             {

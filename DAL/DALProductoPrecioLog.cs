@@ -32,5 +32,40 @@ namespace DAL
 
             }
         }
+
+
+
+        public List<BEProductoPrecioLog> Listar(int IdProducto)
+        {
+            List<BEProductoPrecioLog> tmp = new List<BEProductoPrecioLog>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("LISTAR_LOGS_PRECIOS_PRODUCTO", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@ID_PRODUCTO", IdProducto));
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    tmp.Add(new BEProductoPrecioLog((int)reader["ID_PRODUCTO_PRECIO_LOG"], (int)reader["ID_USUARIO"], (int)reader["ID_PRODUCTO"], (decimal)reader["PRECIO"], (DateTime)reader["FECHA"]));
+
+                }
+            }
+
+
+
+            return tmp;
+        }
+
+
+
+
+
     }
+
+
 }

@@ -36,5 +36,11 @@ namespace BLL
             return new BLLProducto().ObtenerPorId(pIdProducto).Precio != pPrecio;
         }
 
+
+        public List<BEProductoPrecioLog> Listar(int IdProducto)
+        {
+            return dalProductoPrecioLog.Listar(IdProducto);
+        }
+
     }
 }
