@@ -147,6 +147,12 @@ namespace GUI
         {
             try
             {
+                BEProducto prodSeleccionado = (BEProducto)dtgvProductos.CurrentRow.DataBoundItem;
+                bllProducto.baja(prodSeleccionado);
+
+                mostrarProductos();
+
+
 
             }
             catch (Exception ex)

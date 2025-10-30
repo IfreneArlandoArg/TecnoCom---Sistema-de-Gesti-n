@@ -23,6 +23,7 @@ namespace GUI
         BLLUsuario bllUsuario = new BLLUsuario();
         BLLUsuarioLog log = new BLLUsuarioLog();
         BLLIdioma bllIdioma = new BLLIdioma();
+        BLLProducto bllProducto = new BLLProducto();
 
 
         public void ActualizarIdioma(Idioma idioma)
@@ -90,6 +91,19 @@ namespace GUI
 
                 if (!registrado)
                     throw new Exception("Email y/o Password incorrecto...");
+
+                if(!tmpUsuario.Activo)
+                    throw new Exception("El usuario se encuentra inactivo. Contacte con un administrador...");
+
+                if (!bllProducto.VerificarIntegridad())
+                {
+                    if(!bllUsuario.EsAdmin(tmpUsuario))
+                    throw new Exception("La integridad de los productos ha sido comprometida. Contacte con un administrador...");
+
+                    //Some actions for admin users.....below...
+                    throw new Exception("Admin Error\nLa integridad de los productos ha sido comprometida. Contacte con un administrador...");
+                }
+
 
                 LoginSession.Instancia.Login(tmpUsuario);
 

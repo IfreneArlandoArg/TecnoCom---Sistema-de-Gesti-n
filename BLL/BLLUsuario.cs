@@ -31,6 +31,12 @@ namespace BLL
             return returnValue;
         }
 
+        public bool EsAdmin(BEUsuario usuario) 
+        { 
+           return usuario.Permisos.Any(permiso => permiso.Nombre == "Admin");
+        }
+
+
         public void Alta(BEUsuario pBeUsuario)
         {
             dalUsuario.Alta(pBeUsuario);

@@ -73,6 +73,53 @@ namespace DAL
             }
         }
 
+        //Update DVH(Digito verificador Horizontal) for all products
+        public void ActualizarDVH()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE_DVH_PRODUCTO", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        //Update DVV(Digito verificador Vertical) for all products
+        public void ActualizarDVV()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE_DVV_PRODUCTO", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public bool VerificarIntegridad()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SP_Verificar_Integridad_Productos", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                conn.Open();
+
+                
+                object result = cmd.ExecuteScalar();
+
+                
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToBoolean(result);
+                }
+
+                return false; 
+            }
+        }
+
+
         public List<BEProducto> Listar()
         {
             List<BEProducto> tmp = new List<BEProducto>();
