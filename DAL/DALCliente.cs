@@ -8,9 +8,9 @@ using BE;
 
 namespace DAL
 {
-    public class DALCliente
+    public class DALCliente : DALConnection
     {
-        string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
+       // string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
         public void Alta(BECliente pCliente)
         {
             using (SqlConnection conn = new SqlConnection(connectionString)) 

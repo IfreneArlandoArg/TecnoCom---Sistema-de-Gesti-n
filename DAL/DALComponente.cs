@@ -8,9 +8,9 @@ using System.Text;
 
 namespace DAL
 {
-    public class DALComponente
+    public class DALComponente : DALConnection
     {
-        string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
+       // string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
 
 
         public void PopularHijosFamilia(Familia pFamilia)

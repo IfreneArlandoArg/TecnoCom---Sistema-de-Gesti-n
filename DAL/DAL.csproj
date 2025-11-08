@@ -157,6 +157,7 @@
   <ItemGroup>
     <Compile Include="DALCliente.cs" />
     <Compile Include="DALComponente.cs" />
+    <Compile Include="DALConnection.cs" />
     <Compile Include="DALFactura.cs" />
     <Compile Include="DALIdioma.cs" />
     <Compile Include="DALProducto.cs" />

@@ -17,7 +17,7 @@ namespace BLL
             UserFound = null;
 
 
-            foreach(BEUsuario pUser in ListarActivos()) 
+            foreach(BEUsuario pUser in Listar()) 
             { 
                 if(pUser.Email == pEmail && pUser.PasswordHash == pPassword) 
                 { 

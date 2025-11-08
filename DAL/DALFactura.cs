@@ -8,9 +8,9 @@ using System.Text;
 
 namespace DAL
 {
-    public class DALFactura
+    public class DALFactura : DALConnection
     {
-        string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
+        //string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
 
         public void Alta(BEFactura bEFactura)
         {

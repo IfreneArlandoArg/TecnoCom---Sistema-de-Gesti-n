@@ -9,9 +9,9 @@ using System.Text;
 
 namespace DAL
 {
-    public class DALProducto
+    public class DALProducto: DALConnection
     {
-        string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
+        //string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
         public void Alta(BEProducto pProducto)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))

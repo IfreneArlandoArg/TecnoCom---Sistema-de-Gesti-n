@@ -12,9 +12,9 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class DALUsuario 
+    public class DALUsuario : DALConnection
     {
-        string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
+        //string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
 
         DALComponente dalComponente = new DALComponente();
 

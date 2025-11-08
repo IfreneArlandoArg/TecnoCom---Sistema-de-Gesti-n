@@ -8,9 +8,9 @@ using System.Text;
 
 namespace DAL
 {
-    public class DALIdioma
+    public class DALIdioma: DALConnection
     {
-        string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
+        //string connectionString = "Integrated Security = SSPI; Data Source = .; Initial Catalog = TecnoComDB;";
         public List<Idioma> ObtenerTodos()
         {
             List<Idioma> lista = new List<Idioma>();
