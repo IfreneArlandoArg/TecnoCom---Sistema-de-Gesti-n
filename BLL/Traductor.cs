@@ -14,7 +14,10 @@ namespace BLL
         private Dictionary<string, string> _traducciones = new Dictionary<string, string>();
         BLLUsuarioLog log = new BLLUsuarioLog();
 
-        private Traductor() { }
+        private Traductor() 
+        {
+           
+        }
 
         public static Traductor Instancia
         {
@@ -41,10 +44,12 @@ namespace BLL
         {
             _idiomaActual = idioma;
             CargarTraducciones(idioma);
-            
-            BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Cambio_Idioma");
-            log.Alta(beUsuarioLog);
 
+            if (LoginSession.Instancia.UsuarioActual != null)
+            {
+                BEUsuarioLog beUsuarioLog = new BEUsuarioLog(LoginSession.Instancia.UsuarioActual.IdUsuario, "Cambio_Idioma");
+                log.Alta(beUsuarioLog);
+            }
 
             Notificar();
         }

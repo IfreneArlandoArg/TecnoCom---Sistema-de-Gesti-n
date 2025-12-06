@@ -102,7 +102,7 @@ namespace GUI
                     throw new Exception("El stock no puede ser negativo...");
 
 
-                bllProducto.Alta(new BEProducto(txtNombre.Text, txtDescripcion.Text, (decimal)numPrecio.Value, (int)numStock.Value));
+                bllProducto.Alta(new BEProducto(txtNombre.Text, txtDescripcion.Text, (decimal)numPrecio.Value, (int)numStock.Value), LoginSession.Instancia.UsuarioActual.IdUsuario);
 
                 mostrarProductos();
 
@@ -131,7 +131,7 @@ namespace GUI
                     throw new Exception("El stock no puede ser negativo...");
 
 
-                bllProducto.Modificar(prodSeleccionado);
+                bllProducto.Modificar(prodSeleccionado, LoginSession.Instancia.UsuarioActual.IdUsuario);
 
                 mostrarProductos();
 
@@ -148,7 +148,7 @@ namespace GUI
             try
             {
                 BEProducto prodSeleccionado = (BEProducto)dtgvProductos.CurrentRow.DataBoundItem;
-                bllProducto.baja(prodSeleccionado);
+                bllProducto.baja(prodSeleccionado, LoginSession.Instancia.UsuarioActual.IdUsuario);
 
                 mostrarProductos();
 
@@ -240,7 +240,7 @@ namespace GUI
                 if (prodSeleccionado.Stock < 0)
                     throw new Exception("El stock no puede ser negativo...");
 
-                bllProducto.Modificar(prodSeleccionado);
+                bllProducto.Modificar(prodSeleccionado, LoginSession.Instancia.UsuarioActual.IdUsuario);
 
                 mostrarProductos();
 

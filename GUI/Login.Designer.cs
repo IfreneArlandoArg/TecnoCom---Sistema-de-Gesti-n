@@ -36,6 +36,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.chBVerPass = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblIntentos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,21 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // lblIntentos
+            // 
+            this.lblIntentos.AutoSize = true;
+            this.lblIntentos.Location = new System.Drawing.Point(747, 579);
+            this.lblIntentos.Name = "lblIntentos";
+            this.lblIntentos.Size = new System.Drawing.Size(95, 16);
+            this.lblIntentos.TabIndex = 7;
+            this.lblIntentos.Text = "Intentos Login :";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 758);
+            this.Controls.Add(this.lblIntentos);
             this.Controls.Add(this.chBVerPass);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -137,5 +148,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.CheckBox chBVerPass;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblIntentos;
     }
 }

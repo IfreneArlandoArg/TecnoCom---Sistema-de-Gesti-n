@@ -184,13 +184,17 @@ namespace GUI
 
                 CargarIdiomasMain();
 
-                
-                Idioma idiomaPredeterminado = bllIdioma.ObtenerTodos().FirstOrDefault(i => i.Codigo == "es"); 
-                if (idiomaPredeterminado != null)
-                    cmbIdiomas.SelectedItem = idiomaPredeterminado;
 
+                //Idioma idiomaPredeterminado = bllIdioma.ObtenerTodos().FirstOrDefault(i => i.Codigo == "es"); 
+                //if (idiomaPredeterminado != null)
+                //  cmbIdiomas.SelectedItem = idiomaPredeterminado;
+
+                cmbIdiomas.SelectedItem = cmbIdiomas.Items[1];
+                
 
                 //toolStripStatusLabel.Text += $" : {LoginSession.Instancia.UsuarioActual.Apellido}, {LoginSession.Instancia.UsuarioActual.Nombre} ";
+
+
 
 
             }

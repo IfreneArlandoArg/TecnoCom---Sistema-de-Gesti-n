@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="BE.BECliente">
-    <Position X="0.75" Y="5" Width="1.5" />
+    <Position X="0.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAEAAAAgAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BECliente.cs</FileName>

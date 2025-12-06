@@ -73,6 +73,43 @@ namespace DAL
             }
         }
 
+        public void RestaurarDesdeHistorial(int idProducto)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SP_Producto_RestaurarDesdeHistorial", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ID_PRODUCTO", idProducto);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+
+        public void GuardarHistorial(BEProducto p, string accion, int IDUsuario)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SP_Producto_GuardarHistorial", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ID_PRODUCTO", p.ID);
+                cmd.Parameters.AddWithValue("@NOMBRE", p.Nombre);
+                cmd.Parameters.AddWithValue("@DESCRIPCION", p.Descripcion);
+                cmd.Parameters.AddWithValue("@PRECIO", p.Precio);
+                cmd.Parameters.AddWithValue("@STOCK", p.Stock);
+                cmd.Parameters.AddWithValue("@ACCION", accion);
+                cmd.Parameters.AddWithValue("@USUARIO", IDUsuario);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
         //Update DVH(Digito verificador Horizontal) for all products
         public void ActualizarDVH()
         {
@@ -97,27 +134,50 @@ namespace DAL
             }
         }
 
-        public bool VerificarIntegridad()
+        public (bool IntegridadOk, List<BEProducto> ProductosCorruptos) VerificarIntegridad()
         {
+            List<BEProducto> corruptos = new List<BEProducto>();
+            bool integridadOk = false;
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SP_Verificar_Integridad_Productos", conn);
+                SqlCommand cmd = new SqlCommand("SP_Verificar_Integridad_Productos_2", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 conn.Open();
 
-                
-                object result = cmd.ExecuteScalar();
-
-                
-                if (result != null && result != DBNull.Value)
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    return Convert.ToBoolean(result);
-                }
+                    // ---------------------------------------------------------
+                    // Primer resultset → valor de integridad
+                    // ---------------------------------------------------------
+                    if (reader.Read())
+                    {
+                        integridadOk = reader.GetBoolean(reader.GetOrdinal("IntegridadValida"));
+                    }
 
-                return false; 
+                    // Pasar al segundo resultset
+                    reader.NextResult();
+
+                    // ---------------------------------------------------------
+                    // Segundo resultset → productos corruptos
+                    // ---------------------------------------------------------
+                    while (reader.Read())
+                    {
+                        corruptos.Add(new BEProducto(
+                            reader["ID_PRODUCTO"].ToString(),
+                            reader["NOMBRE"].ToString(),
+                            reader["DESCRIPCION"].ToString(),
+                            reader["PRECIO"].ToString(),
+                             reader["STOCK"].ToString()
+                        ));
+                    }
+                }
             }
+
+            return (integridadOk, corruptos);
         }
+
 
 
         public List<BEProducto> Listar()

@@ -17,6 +17,7 @@ namespace BLL
         Alta_Producto,
         Baja_Producto,
         Modificacion_Producto,
+        Restauracion_Producto,
         Alta_Factura,
         Alta_Permiso_Usuario,
         Baja_Permiso_Usuario,
