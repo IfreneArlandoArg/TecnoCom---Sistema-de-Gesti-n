@@ -174,9 +174,11 @@ namespace GUI
 
                 DateTime fecha = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day); 
                     
+                if(fecha > DateTime.Now)
+                    throw new Exception("La fecha de nacimiento no puede ser mayor a la fecha actual...");
 
-               
-                
+
+
 
                 BEUsuario tmpUsuario = new BEUsuario(txtNombre.Text, txtApellido.Text, fecha , txtEmail.Text, Encriptador.HashearConSHA256(txtPassword.Text));
 
@@ -222,7 +224,8 @@ namespace GUI
 
 
                 DateTime fecha = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
-
+                if (fecha > DateTime.Now)
+                    throw new Exception("La fecha de nacimiento no puede ser mayor a la fecha actual...");
 
 
 
