@@ -24,7 +24,7 @@ namespace GUI
         BLLUsuarioLog bllUsuarioLog = new BLLUsuarioLog();
         BLLUsuario bLLUsuario = new BLLUsuario();
 
-        void mostrarDTGV(DataGridView dtgv, object pO)
+        static void mostrarDTGV(DataGridView dtgv, object pO)
         {
             dtgv.DataSource = null;
             dtgv.DataSource = pO;
@@ -147,13 +147,10 @@ namespace GUI
         }
 
         void LoadComboBoxes() 
-        {
-            
+        {   
             LoadComboBox(comboBoxFacts);
 
-
             LoadComboBox(comboBoxActions);
-
 
         }
 
@@ -161,15 +158,11 @@ namespace GUI
         {
             try
             {
-                
-
                 LoadComboBoxes();
-
-                
+   
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
