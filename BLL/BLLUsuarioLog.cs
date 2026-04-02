@@ -29,6 +29,11 @@ namespace BLL
 
         public List<BEUsuarioLog> Listar(EnumAccion enumAccion)
         {
+            if (enumAccion == EnumAccion.All)
+            {
+                return Listar();
+            }
+
             return dalUsuarioLog.Listar()
                 .Where(UserLog => UserLog.Accion == enumAccion.ToString())
                 .OrderByDescending(UserLog => UserLog.FechaHora)

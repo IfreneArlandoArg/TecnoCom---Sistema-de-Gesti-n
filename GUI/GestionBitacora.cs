@@ -57,11 +57,11 @@ namespace GUI
                     control.Text = String.Empty;
                 }
 
-                if(control is ComboBox)
+                if(control is ComboBox comboBox)
                 {
-                    (control as ComboBox).Items.Clear();
+                    comboBox.Items.Clear();
 
-                    LoadComboBoxes();
+                    LoadComboBox(comboBox);
 
                 }
 
@@ -113,46 +113,59 @@ namespace GUI
             chart.ChartAreas[0].AxisY.Title = "Quantity";
         }
 
+        static void AddItemsToComboBox(ComboBox comboBox, Type enumType)
+        {
+            foreach (var value in Enum.GetValues(enumType))
+            {
+                comboBox.Items.Add(value);
+            }
+        }
+        static void AddItemsToComboBox(ComboBox comboBox) 
+        {
+            switch (comboBox.Name)
+            {
+                case "comboBoxFacts":
+                    AddItemsToComboBox(comboBox, typeof(OrderBy));
+                    
+                    break;
+                case "comboBoxActions":
+                    AddItemsToComboBox(comboBox, typeof(EnumAccion));
+                    
+                    break;
+                default:
+                    throw new ArgumentException("ComboBox no reconocido");
+
+
+            }   
+        }
+
+        static void LoadComboBox(ComboBox comboBox) 
+        {
+            AddItemsToComboBox(comboBox);
+
+            comboBox.SelectedIndex = 0;
+        }
+
         void LoadComboBoxes() 
         {
-            comboBoxFacts.Items.Add(OrderBy.Action);
-            comboBoxFacts.Items.Add(OrderBy.Date);
-            comboBoxFacts.Items.Add(OrderBy.User);
-
-            comboBoxFacts.SelectedIndex = 0;
-
-
-            comboBoxActions.Items.Add("All");
-            comboBoxActions.Items.Add(EnumAccion.Login);
-            comboBoxActions.Items.Add(EnumAccion.Logout);
-            comboBoxActions.Items.Add(EnumAccion.Alta_Usuario);
-            comboBoxActions.Items.Add(EnumAccion.Baja_Usuario);
-            comboBoxActions.Items.Add(EnumAccion.Modificacion_Usuario);
-            comboBoxActions.Items.Add(EnumAccion.Alta_Cliente);
-            comboBoxActions.Items.Add(EnumAccion.Baja_Cliente);
-            comboBoxActions.Items.Add(EnumAccion.Modificacion_Cliente);
-            comboBoxActions.Items.Add(EnumAccion.Alta_Producto);
-            comboBoxActions.Items.Add(EnumAccion.Baja_Producto);
-            comboBoxActions.Items.Add(EnumAccion.Modificacion_Producto);
-            comboBoxActions.Items.Add(EnumAccion.Alta_Factura);
-            comboBoxActions.Items.Add(EnumAccion.Alta_Permiso_Usuario);
-            comboBoxActions.Items.Add(EnumAccion.Baja_Permiso_Usuario);
-            comboBoxActions.Items.Add(EnumAccion.Cambio_Idioma);
-
-            comboBoxActions.SelectedIndex = 0;
-
             
+            LoadComboBox(comboBoxFacts);
+
+
+            LoadComboBox(comboBoxActions);
+
+
         }
-      
+
         private void GestionBitacora_Load(object sender, EventArgs e)
         {
             try
             {
-                //mostrarDTGV(dtgvLogs, bllUsuarioLog.Listar());
+                
 
                 LoadComboBoxes();
 
-                //LoadLogChartFactCount( bllUsuarioLog.GetLogCountByAction() ,chartLogManagement, SeriesChartType.Column, OrderBy.Action);
+                
             }
             catch (Exception ex)
             {
@@ -198,18 +211,8 @@ namespace GUI
             {
                 if (comboBoxActions.Items.Count > 0)
                 {
-                    switch (comboBoxActions.SelectedItem) 
-                    { 
-                      case "All":
-                            mostrarDTGV(dtgvLogs, bllUsuarioLog.Listar());
-                            break;
-                      default:
-                            mostrarDTGV(dtgvLogs, bllUsuarioLog.Listar((EnumAccion)comboBoxActions.SelectedItem));
-                            break;
-                    }
-
-
-
+                     mostrarDTGV(dtgvLogs, bllUsuarioLog.Listar((EnumAccion)comboBoxActions.SelectedItem));
+                    
                 }
             }
             catch (Exception ex)
