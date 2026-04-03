@@ -9,7 +9,7 @@ namespace BLL
 {
     public class BLLUsuarioLog
     {
-        DALUsuarioLog dalUsuarioLog = new DALUsuarioLog();
+        readonly DALUsuarioLog dalUsuarioLog = new DALUsuarioLog();
         public void Alta(BEUsuarioLog pBEUsuarioLog)
         {
             dalUsuarioLog.Alta(pBEUsuarioLog);
