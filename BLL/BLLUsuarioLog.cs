@@ -9,7 +9,7 @@ namespace BLL
 {
     public class BLLUsuarioLog
     {
-        DALUsuarioLog dalUsuarioLog = new DALUsuarioLog();
+        readonly DALUsuarioLog dalUsuarioLog = new DALUsuarioLog();
         public void Alta(BEUsuarioLog pBEUsuarioLog)
         {
             dalUsuarioLog.Alta(pBEUsuarioLog);
@@ -29,12 +29,7 @@ namespace BLL
 
         public List<BEUsuarioLog> Listar(EnumAccion enumAccion)
         {
-            if (enumAccion == EnumAccion.All)
-            {
-                return Listar();
-            }
-
-            return dalUsuarioLog.Listar()
+            return enumAccion == EnumAccion.All ? Listar() : dalUsuarioLog.Listar()
                 .Where(UserLog => UserLog.Accion == enumAccion.ToString())
                 .OrderByDescending(UserLog => UserLog.FechaHora)
                 .ToList();
